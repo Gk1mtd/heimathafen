@@ -12,7 +12,7 @@ public class SubControl : MonoBehaviour
     public float rotationSpeed;     //Rotationsgeschwindigkeit
     public float acceleration;      //Beschleunigen / Abbremsen
     public float maxAngle;          //Begrenzt die Rotation des U-Boots
-    private float forwardSpeed;     //Die aktuelle Geschwindigkeit
+    public float forwardSpeed { get; private set; }     //Die aktuelle Geschwindigkeit
 
     // Start is called before the first frame update
     void Start()
