@@ -5,15 +5,18 @@ using UnityEngine;
 public class SubControl : MonoBehaviour
 {
     private Rigidbody body;
-    public float horizontal;
-    public float vertical;
-    private float moveLimiter = 0.7f;
-    public float speed;
+    private float horizontal;       //Controller X-Achse
+    private float vertical;         //Controller Y-Achse
+    public float maxSpeed;          //Begrenzt die Geschwindigkeit des U-Boots
+    public float rotationSpeed;     //Rotationsgeschwindigkeit
+    public float acceleration;      //Beschleunigen / Abbremsen
+    private float forwardSpeed;     //Die aktuelle Geschwindigkeit
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        forwardSpeed = 0.0f;
     }
 
     // Update is called once per frame
@@ -25,26 +28,13 @@ public class SubControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(horizontal * speed, transform.rotation.z, 0);
-        body.AddForce(movement * speed);
-
-        Vector3 rotation = new Vector3(0, 0, vertical * speed);
+        Vector3 rotation = new Vector3(0, 0, vertical * rotationSpeed);
         transform.Rotate(rotation);
+
+        forwardSpeed += horizontal * acceleration;
+        forwardSpeed = Mathf.Max(-maxSpeed, forwardSpeed);
+        forwardSpeed = Mathf.Min(maxSpeed, forwardSpeed);
+        transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
     }
-
-    /*
-     *     void FixedUpdate()
-    {
-        Vector3 movement;
-
-        if (horizontal != 0 && vertical != 0)
-            movement = new Vector3((horizontal * speed) * moveLimiter, (vertical * speed) * moveLimiter, 0);
-        else
-            movement = new Vector3(horizontal * speed, vertical * speed, 0);
-
-        body.AddForce(movement * speed);
-
-        transform.Rotate(movement);
-    }*/
 }
  
