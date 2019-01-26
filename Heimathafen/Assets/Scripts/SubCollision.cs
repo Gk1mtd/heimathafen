@@ -25,12 +25,13 @@ public class SubCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
             gameMan.ChangeHealth(-34 * dmgModifier);
+            gameMan.effectScript.Effekt(position, Effects.Effekte.Explosion);
         }
         else if (collision.gameObject.CompareTag("Felsen"))
         {
             gameMan.ChangeHealth((-subCont.forwardSpeed * 20 * dmgModifier));
+            gameMan.effectScript.Effekt(position, Effects.Effekte.Funken);
         }
-        gameMan.effectScript.Effekt(position, Effects.Effekte.Explosion);
     }
 
     //Beim Erreichen von Triggern (Oberfläche, Ziel)
