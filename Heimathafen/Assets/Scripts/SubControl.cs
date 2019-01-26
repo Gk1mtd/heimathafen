@@ -34,7 +34,7 @@ public class SubControl : MonoBehaviour
     void Start()
     {
         gameMan = GameManager.instance;
-        rumble = gameMan.rumblepackScript;
+        rumble = gameMan.GetComponent<RumblePack>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
