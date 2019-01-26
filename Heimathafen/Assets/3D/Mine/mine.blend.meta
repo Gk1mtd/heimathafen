@@ -67,6 +67,8 @@ ModelImporter:
     100122: Hair_061
     100124: //RootNode
     100126: NietenGuertel
+    100128: Kontakter
+    100130: Nieten
     400000: Hair
     400002: Hair_001
     400004: Hair_002
@@ -131,8 +133,13 @@ ModelImporter:
     400122: Hair_061
     400124: //RootNode
     400126: NietenGuertel
+    400128: Kontakter
+    400130: Nieten
     2100000: Material
     2100002: unnamed
+    2100004: Oberflaeche
+    2100006: Ring
+    2100008: Nieten
     2300000: Hair
     2300002: Hair_001
     2300004: Hair_002
