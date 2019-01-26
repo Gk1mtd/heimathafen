@@ -7,6 +7,7 @@ public class SubControl : MonoBehaviour
     private Rigidbody body;
     private GameObject gameManObj;
     private GameManager gameMan;
+    private RumblePack rumble;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -34,6 +35,7 @@ public class SubControl : MonoBehaviour
     {
         gameManObj = GameObject.Find("GameManager");
         gameMan = gameManObj.GetComponent<GameManager>();
+        rumble = gameManObj.GetComponent<RumblePack>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
