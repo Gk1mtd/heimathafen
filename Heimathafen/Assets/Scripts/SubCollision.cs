@@ -47,8 +47,7 @@ public class SubCollision : MonoBehaviour
         if (other.CompareTag("Oberflaeche"))
         {
             Debug.Log("Zu hoch - Zerstört");
-            gameMan.ChangeHealth(-100);
-            gameManObj.GetComponent<Effects>().Effekt(transform.position, Effects.Effekte.Explosion);
+            gameMan.YouLost();
         }
     }
 }

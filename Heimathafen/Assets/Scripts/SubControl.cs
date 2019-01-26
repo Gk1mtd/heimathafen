@@ -7,6 +7,7 @@ public class SubControl : MonoBehaviour
     private Rigidbody body;
     private GameObject gameManObj;
     private GameManager gameMan;
+    private RumblePack rumble;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -33,6 +34,7 @@ public class SubControl : MonoBehaviour
     void Start()
     {
         gameMan = GameManager.instance;
+        rumble = gameMan.rumblepackScript;
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
@@ -84,7 +86,13 @@ public class SubControl : MonoBehaviour
         if (transform.rotation.eulerAngles.z > maxAngle && transform.rotation.eulerAngles.z < maxAngle + 90)
             transform.eulerAngles = new Vector3(0, 0, maxAngle - 0.5f);
         if (transform.rotation.eulerAngles.z > 360 - maxAngle - 90 && transform.rotation.eulerAngles.z < 360 - maxAngle)
-            transform.eulerAngles = new Vector3(0, 0, - maxAngle + 0.5f);
+            transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
+
+        //Rumble
+        if (schub > 0 || rueckschub > 0)
+            rumble.player2Rumble[0] = 0.5f;
+        else
+            rumble.player2Rumble[0] = 0.0f;
     }
 
     //Begrenzt die Rotation des U-Boots
