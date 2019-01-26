@@ -122,6 +122,7 @@ public class SubControl : MonoBehaviour
         GameObject torpedo = Instantiate(torpedoPrefab, torpedoRohr.transform.position, transform.rotation);
         torpedoReady = false;
         StartCoroutine(Cooldown("Torpedo"));
+        gameMan.GetComponent<Effects>().Effekt(transform.position, Effects.Effekte.TorpedoStart);
     }
 
     //Sonar starten
