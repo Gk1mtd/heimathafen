@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7420553057949986473}
   - component: {fileID: 7420553057949986472}
   - component: {fileID: 7420553057949986475}
+  - component: {fileID: 1085868585}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,9 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameIsRunning: 0
   damageModifier: 1
-  sonarTorpedoTime: 10
+  subRenderer: {fileID: 0}
+  sonarTorpedoTime: 30
   torpedoMaxDist: 10
   torpedoMinDist: 5
+  effectScript: {fileID: 0}
 --- !u!114 &7420553057949986475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,5 +67,34 @@ MonoBehaviour:
   explosion: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
     type: 3}
   sonar: {fileID: 9105880090623965250, guid: bf41721edb73dc14da0715514e8189f1, type: 3}
+  sonarAudioStart: {fileID: 8300000, guid: 4f8c7db62dfb4ea4488554a9a7f67611, type: 3}
+  sonarPitch: []
   stoerkoerper: {fileID: 3713420385934025405, guid: e03a2e1e7c1b69f4aa4c486d32678a30,
     type: 3}
+  stoerkoerperAudio: {fileID: 8300000, guid: 8025d25e510e6c646bfe89b6e3f32412, type: 3}
+  funkenKollision: {fileID: 1025115118658340148, guid: 4701d072cea193441a64a71120eb8c44,
+    type: 3}
+  funkenKollisionAudio: {fileID: 0}
+  torpedoLaunch: {fileID: 8300000, guid: 408b51dc63c55a04dbfe68fbe81fd523, type: 3}
+--- !u!114 &1085868585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420553057949986474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12e6b22819ef7b45a1861a340fca87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  rumbleReduce: 0.095
+  maxNaturalRumble: 0.65
+  minNaturalRumble: 0
+  player1Rumble:
+  - 0
+  - 0
+  player2Rumble:
+  - 0
+  - 0
