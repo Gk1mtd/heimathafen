@@ -642,11 +642,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b3a4990dc5e3b4aaa3525f0095ae1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   maxSpeed: 3
   rotationSpeed: 0.5
   acceleration: 0.05
   maxAngle: 40
-  torpedoPrefab: {fileID: 3957177250476405901, guid: a0571dab944b76c47bb178559940d0cf,
+  torpedoPrefab: {fileID: 8007965827574057162, guid: 772f2dd4b98ba0540abde450433e0e09,
     type: 3}
   torpedoRohr: {fileID: 3951917164622151493}
   torpedoCooldown: 5

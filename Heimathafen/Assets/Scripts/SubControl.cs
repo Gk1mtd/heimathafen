@@ -76,7 +76,7 @@ public class SubControl : MonoBehaviour
                 }
             }
 
-            else
+            else if (!debug)
             {
                 if (contManager.statePlayer1.Buttons.A == XInputDotNetPure.ButtonState.Pressed && sonarReady)
                 {
@@ -108,6 +108,7 @@ public class SubControl : MonoBehaviour
             Vector3 rotation = new Vector3(0, 0, vertical * rotationSpeed);
             transform.Rotate(rotation);
         }
+
         //Bewegung
         forwardSpeed += schub * acceleration;       //Schub addieren
         forwardSpeed -= rueckschub * acceleration;  //Rückschub subtrahieren
