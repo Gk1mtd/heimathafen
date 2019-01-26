@@ -1001,6 +1001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
         type: 3}
+      propertyPath: huellenbruch.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
       propertyPath: funkenKollision
       value: 
       objectReference: {fileID: 1025115118658340148, guid: 4701d072cea193441a64a71120eb8c44,
@@ -1025,5 +1030,35 @@ PrefabInstance:
       propertyPath: stoerkoerperAudio
       value: 
       objectReference: {fileID: 8300000, guid: 8025d25e510e6c646bfe89b6e3f32412, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: huellenbruch.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ff1769c3e35b7d944b8d2c3bd36eaccb, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: huellenbruch.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 66f0fc5fec880ab4eaa97527b8a0df33, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: huellenbruch.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b559f7913fb9caa40b181bd6dda0a5ee, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: huellenbruch.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ff2a398601742f24aad0a9bae7c3b5c6, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: huellenbruch.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: b404b0e2e4e14a94390dffcd1c30054d, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: huellenbruch.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: e82a182d70557134ab1999a42bbf0d35, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}
