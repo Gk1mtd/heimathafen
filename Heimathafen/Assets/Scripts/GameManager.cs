@@ -70,9 +70,18 @@ public class GameManager : MonoBehaviour
         subRenderer.material.SetFloat("_DetailNormalMapScale", normalVal);
     }
 
+    public void YouWon()
+    {
+        Debug.Log("Gewonnen");
+        gameIsRunning = false;
+        playerObj.GetComponent<SubControl>().StoppeUBoot();
+    }
+
     private void YouLost()
     {
         Debug.Log("You lost");
+        gameIsRunning = false;
+        playerObj.GetComponent<SubControl>().StoppeUBoot();
     }
 
     //Unsichtbares Torpedo starten

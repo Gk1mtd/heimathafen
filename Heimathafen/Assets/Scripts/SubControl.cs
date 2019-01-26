@@ -44,23 +44,26 @@ public class SubControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        schub = Input.GetAxisRaw("Schub");
-        rueckschub = Input.GetAxisRaw("Rueckschub");
-        vertical = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetButtonDown("Fire1") && torpedoReady)
+        if (gameMan.gameIsRunning)
         {
-            Torpedo();
-        }
+            schub = Input.GetAxisRaw("Schub");
+            rueckschub = Input.GetAxisRaw("Rueckschub");
+            vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Fire2") && sonarReady)
-        {
-            Sonar();
-        }
+            if (Input.GetButtonDown("Fire1") && torpedoReady)
+            {
+                Torpedo();
+            }
 
-        if (Input.GetButtonDown("Fire3") && stoerkoerperReady)
-        {
-            Stoerkoerper();
+            if (Input.GetButtonDown("Fire2") && sonarReady)
+            {
+                Sonar();
+            }
+
+            if (Input.GetButtonDown("Fire3") && stoerkoerperReady)
+            {
+                Stoerkoerper();
+            }
         }
     }
 
@@ -105,6 +108,12 @@ public class SubControl : MonoBehaviour
             return false;
         }
         return false;
+    }
+
+    //Stoppt das U-Boot, wenn das Spiel endet
+    public void StoppeUBoot()
+    {
+        forwardSpeed = 0.0f;
     }
 
     //Torpedo abfeuern
