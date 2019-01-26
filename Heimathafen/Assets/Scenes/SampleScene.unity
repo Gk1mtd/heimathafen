@@ -559,6 +559,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &690080672
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690080665}
+  m_Enabled: 1
 --- !u!1001 &976235958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1050,7 +1058,7 @@ PrefabInstance:
     - target: {fileID: 1855639925274493787, guid: d32954290319e684795ee8d49cb2742f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 1855639925274493787, guid: d32954290319e684795ee8d49cb2742f,
         type: 3}
@@ -1127,7 +1135,8 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 50
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1934918972096724264, guid: d32954290319e684795ee8d49cb2742f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d32954290319e684795ee8d49cb2742f, type: 3}
 --- !u!1001 &7420553059018943186
 PrefabInstance:
@@ -1217,5 +1226,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
         type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: explosionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e4d69f700c90234f95ff8ee872c09c5, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: sonarAudioStart
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f8c7db62dfb4ea4488554a9a7f67611, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: torpedoLaunch
+      value: 
+      objectReference: {fileID: 8300000, guid: 408b51dc63c55a04dbfe68fbe81fd523, type: 3}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: stoerkoerperAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8025d25e510e6c646bfe89b6e3f32412, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}
