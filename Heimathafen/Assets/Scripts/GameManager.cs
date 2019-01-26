@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     GameObject playerObj;
     public int health { get; private set; } //Zustan des U-Boots
     public float damageModifier;            //erhöht/reduziert den Schaden am U-Boot - 1.0 ist keine Änderung
+    public MeshRenderer subRenderer;       //Renderer-Komponente des U-Boots
 
     private float sonarTorpedoTimer;        //Countdown bis zum Start eines unsichtbaren Torpedos
     public float sonarTorpedoTime;          //Startzeit des Countdowns
@@ -64,6 +65,9 @@ public class GameManager : MonoBehaviour
         if (health <= 0)
             YouLost();
         Debug.Log(health);
+        float normalVal = subRenderer.material.GetFloat("_DetailNormalMapScale");
+        normalVal += -mod * 0.12f;
+        subRenderer.material.SetFloat("_DetailNormalMapScale", normalVal);
     }
 
     private void YouLost()
