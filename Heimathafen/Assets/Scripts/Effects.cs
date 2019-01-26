@@ -6,23 +6,15 @@ public class Effects : MonoBehaviour
 {
     public ParticleSystem explosion;
     public ParticleSystem sonar;
+    public ParticleSystem stoerkoerper;
+    public ParticleSystem funkenKollision;
 
     public enum Effekte
     {
         Explosion,
-        Sonar
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Sonar,
+        Stoerkoerper,
+        Funken
     }
     
     public void Effekt(Vector3 position, Effekte effekt)
@@ -35,6 +27,12 @@ public class Effects : MonoBehaviour
                 break;
             case Effekte.Sonar:
                 objekt = Instantiate(sonar, position, Quaternion.identity);
+                break;
+            case Effekte.Stoerkoerper:
+                objekt = Instantiate(stoerkoerper, position, Quaternion.Euler(-195.0f, 90.0f, -90.0f));
+                break;
+            case Effekte.Funken:
+                objekt = Instantiate(funkenKollision, position, Quaternion.identity);
                 break;
             default:
                 objekt = new ParticleSystem();

@@ -6,6 +6,7 @@ public class SubControl : MonoBehaviour
 {
     private Rigidbody body;
     private GameObject gameManObj;
+    private GameManager gameMan;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -24,32 +25,45 @@ public class SubControl : MonoBehaviour
     public float sonarCooldown;     //Sonar Cooldownzeit
     private bool sonarReady;        //false, wenn Cooldown läuft
 
+    public float stoerkoerperCooldown;  //Störkörper Cooldownzeit
+    private bool stoerkoerperReady;     //false, wenn Cooldown läuft
+
 
     // Start is called before the first frame update
     void Start()
     {
         gameManObj = GameObject.Find("GameManager");
+        gameMan = gameManObj.GetComponent<GameManager>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
         sonarReady = true;
+        stoerkoerperReady = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        schub = Input.GetAxisRaw("Schub");
-        rueckschub = Input.GetAxisRaw("Rueckschub");
-        vertical = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetButtonDown("Fire1") && torpedoReady)
+        if (gameMan.gameIsRunning)
         {
-            Torpedo();
-        }
+            schub = Input.GetAxisRaw("Schub");
+            rueckschub = Input.GetAxisRaw("Rueckschub");
+            vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Fire2") && sonarReady)
-        {
-            Sonar();
+            if (Input.GetButtonDown("Fire1") && torpedoReady)
+            {
+                Torpedo();
+            }
+
+            if (Input.GetButtonDown("Fire2") && sonarReady)
+            {
+                Sonar();
+            }
+
+            if (Input.GetButtonDown("Fire3") && stoerkoerperReady)
+            {
+                Stoerkoerper();
+            }
         }
     }
 
@@ -96,6 +110,12 @@ public class SubControl : MonoBehaviour
         return false;
     }
 
+    //Stoppt das U-Boot, wenn das Spiel endet
+    public void StoppeUBoot()
+    {
+        forwardSpeed = 0.0f;
+    }
+
     //Torpedo abfeuern
     private void Torpedo()
     {
@@ -110,7 +130,27 @@ public class SubControl : MonoBehaviour
         Vector3 sonarPos = new Vector3(transform.position.x + 1.39f, transform.position.y, transform.position.z + 1.0f);
         gameManObj.GetComponent<Effects>().Effekt(sonarPos, Effects.Effekte.Sonar);
         sonarReady = false;
-        StartCoroutine(Cooldown("Torpedo"));
+        StartCoroutine(Cooldown("Sonar"));
+        if (gameMan.torpedoLaunched)
+        {
+            Debug.Log(gameMan.torpedoDist);
+        }
+    }
+
+    //Störpörper abfeuern
+    private void Stoerkoerper()
+    {
+        Vector3 stoerPos = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z);
+        gameManObj.GetComponent<Effects>().Effekt(stoerPos, Effects.Effekte.Stoerkoerper);
+        stoerkoerperReady = false;
+        StartCoroutine(Cooldown("Stoerkoerper"));
+        if (gameMan.torpedoLaunched && (gameMan.torpedoDist < 2.0f))
+        {
+            Debug.Log("Feindl. Torpedo zerstört");
+            Vector3 torpPos = new Vector3(transform.position.x - 2.0f, transform.position.y, transform.position.z);
+            gameManObj.GetComponent<Effects>().Effekt(torpPos, Effects.Effekte.Explosion);
+            gameMan.TorpedoStopped();
+        }
     }
 
     //Cooldown abwarten
@@ -125,6 +165,10 @@ public class SubControl : MonoBehaviour
             case "Sonar":
                 yield return new WaitForSeconds(sonarCooldown);
                 sonarReady = true;
+                break;
+            case "Stoerkoerper":
+                yield return new WaitForSeconds(stoerkoerperCooldown);
+                stoerkoerperReady = true;
                 break;
             default:
                 Debug.Log("Fehler in SubControl-Cooldown");

@@ -18,12 +18,7 @@ public class SubCollision : MonoBehaviour
         dmgModifier = gameMan.damageModifier;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //Bei Kollisionen mit Minen und Felsen
     private void OnCollisionEnter(Collision collision)
     {
         Vector3 position = collision.contacts[0].point;
@@ -37,5 +32,23 @@ public class SubCollision : MonoBehaviour
             gameMan.ChangeHealth((-subCont.forwardSpeed * 20 * dmgModifier));
         }
         gameManObj.GetComponent<Effects>().Effekt(position, Effects.Effekte.Explosion);
+    }
+
+    //Beim Erreichen von Triggern (Oberfläche, Ziel)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ziel"))
+        {
+            gameMan.YouWon();
+        }
+        if (other.CompareTag("OberflaecheWarnung"))
+        {
+            Debug.Log("Zu hoch - Abtauchen!");
+        }
+        if (other.CompareTag("Oberflaeche"))
+        {
+            Debug.Log("Zu hoch - Zerstört");
+            gameMan.YouLost();
+        }
     }
 }
