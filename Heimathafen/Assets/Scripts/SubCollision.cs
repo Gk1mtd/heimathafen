@@ -36,6 +36,6 @@ public class SubCollision : MonoBehaviour
         {
             gameMan.ChangeHealth((-subCont.forwardSpeed * 20 * dmgModifier));
         }
-        gameManObj.GetComponent<Effects>().Explosion(position);
+        gameManObj.GetComponent<Effects>().Effekt(position, Effects.Effekte.Explosion);
     }
 }
