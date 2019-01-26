@@ -76,10 +76,7 @@ MonoBehaviour:
     type: 3}
   funkenKollisionAudio: {fileID: 0}
   torpedoLaunch: {fileID: 8300000, guid: 408b51dc63c55a04dbfe68fbe81fd523, type: 3}
-<<<<<<< HEAD
   huellenbruch: []
-=======
->>>>>>> afc28cb3024f791853dd667c73b83a07ba50a9bb
 --- !u!114 &1085868585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,11 +92,7 @@ MonoBehaviour:
   debug: 0
   rumbleReduce: 0.095
   maxNaturalRumble: 0.65
-<<<<<<< HEAD
   minNaturalRumble: 0.05
-=======
-  minNaturalRumble: 0
->>>>>>> afc28cb3024f791853dd667c73b83a07ba50a9bb
   player1Rumble:
   - 0
   - 0
