@@ -201,6 +201,7 @@ public class SubControl : MonoBehaviour
             case "Torpedo":
                 yield return new WaitForSeconds(torpedoCooldown);
                 torpedoReady = true;
+                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.TorpedoBereit);
                 break;
             case "Sonar":
                 yield return new WaitForSeconds(sonarCooldown);
@@ -210,6 +211,7 @@ public class SubControl : MonoBehaviour
             case "Stoerkoerper":
                 yield return new WaitForSeconds(stoerkoerperCooldown);
                 stoerkoerperReady = true;
+                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.StoerkoerperBereit);
                 break;
             default:
                 Debug.Log("Fehler in SubControl-Cooldown");
