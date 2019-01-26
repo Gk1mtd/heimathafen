@@ -887,6 +887,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8007965827574057162, guid: 772f2dd4b98ba0540abde450433e0e09,
         type: 3}
+    - target: {fileID: 5962285805626414158, guid: d32954290319e684795ee8d49cb2742f,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32954290319e684795ee8d49cb2742f, type: 3}
 --- !u!1001 &7420553059018943186
