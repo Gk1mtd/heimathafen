@@ -33,9 +33,8 @@ public class SubControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManObj = GameObject.Find("GameManager");
-        gameMan = gameManObj.GetComponent<GameManager>();
-        rumble = gameManObj.GetComponent<RumblePack>();
+        gameMan = GameManager.instance;
+        rumble = gameMan.rumblepackScript;
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;

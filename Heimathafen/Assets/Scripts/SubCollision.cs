@@ -12,8 +12,7 @@ public class SubCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManObj = GameObject.Find("GameManager");
-        gameMan = gameManObj.GetComponent<GameManager>();
+        gameMan = GameManager.instance;
         subCont = GetComponent<SubControl>();
         dmgModifier = gameMan.damageModifier;
     }
@@ -31,7 +30,7 @@ public class SubCollision : MonoBehaviour
         {
             gameMan.ChangeHealth((-subCont.forwardSpeed * 20 * dmgModifier));
         }
-        gameManObj.GetComponent<Effects>().Effekt(position, Effects.Effekte.Explosion);
+        gameMan.effectScript.Effekt(position, Effects.Effekte.Explosion);
     }
 
     //Beim Erreichen von Triggern (Oberfläche, Ziel)
