@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: 509bf66e80d7e499184d4ad8fac423ff
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: back_fin_B_001_Bk
+    100004: back_fin_B_Bk
+    100006: back_fin_T_001_Bk
+    100008: back_fin_T_002_Bk
+    100010: back_fin_T_Bk
+    100012: eye_L
+    100014: eye_R
+    100016: jaw
+    100018: jaw_001
+    100020: jaw_002_L
+    100022: jaw_002_R
+    100024: jaw_003_L
+    100026: jaw_003_R
+    100028: jaw_master
+    100030: metarig
+    100032: Plane
+    100034: spine
+    100036: spine_001
+    100038: spine_002
+    100040: spine_003
+    100042: spine_004
+    100044: spine_005
+    100046: spine_006
+    100048: spine_007
+    100050: spine_008
+    100052: top_fin
+    100054: top_fin_001
+    400000: //RootNode
+    400002: back_fin_B_001_Bk
+    400004: back_fin_B_Bk
+    400006: back_fin_T_001_Bk
+    400008: back_fin_T_002_Bk
+    400010: back_fin_T_Bk
+    400012: eye_L
+    400014: eye_R
+    400016: jaw
+    400018: jaw_001
+    400020: jaw_002_L
+    400022: jaw_002_R
+    400024: jaw_003_L
+    400026: jaw_003_R
+    400028: jaw_master
+    400030: metarig
+    400032: Plane
+    400034: spine
+    400036: spine_001
+    400038: spine_002
+    400040: spine_003
+    400042: spine_004
+    400044: spine_005
+    400046: spine_006
+    400048: spine_007
+    400050: spine_008
+    400052: top_fin
+    400054: top_fin_001
+    2100000: Material_001
+    2300000: //RootNode
+    2300002: Plane
+    3300000: //RootNode
+    3300002: Plane
+    4300000: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001
+    second: {fileID: 2100000, guid: 440d9cc17e0414f4ab9966106e12f825, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
