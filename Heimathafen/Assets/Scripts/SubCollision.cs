@@ -26,7 +26,7 @@ public class SubCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Vector3 position = collision.gameObject.transform.position;
+        Vector3 position = collision.contacts[0].point;
         if (collision.gameObject.CompareTag("Mine"))
         {
             Destroy(collision.gameObject);

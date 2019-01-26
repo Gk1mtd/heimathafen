@@ -13,6 +13,9 @@ public class SubControl : MonoBehaviour
     public float acceleration;      //Beschleunigen / Abbremsen
     public float maxAngle;          //Begrenzt die Rotation des U-Boots
     public float forwardSpeed { get; private set; }     //Die aktuelle Geschwindigkeit
+    public GameObject torpedoPrefab;
+    public Transform torpedoRohr;   //Abfeuern des Torpedos von hier
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,11 @@ public class SubControl : MonoBehaviour
         schub = Input.GetAxisRaw("Schub");
         rueckschub = Input.GetAxisRaw("Rueckschub");
         vertical = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Torpedo();
+        }
     }
 
     void FixedUpdate()
@@ -36,7 +44,6 @@ public class SubControl : MonoBehaviour
         {
             Vector3 rotation = new Vector3(0, 0, vertical * rotationSpeed);
             transform.Rotate(rotation);
-            Debug.Log(transform.rotation.eulerAngles.z);
         }
         //Bewegung
         forwardSpeed += schub * acceleration;       //Schub addieren
@@ -44,8 +51,14 @@ public class SubControl : MonoBehaviour
         forwardSpeed = Mathf.Max(-maxSpeed, forwardSpeed);
         forwardSpeed = Mathf.Min(maxSpeed, forwardSpeed);
         transform.Translate(Vector3.right * Time.deltaTime * forwardSpeed);
+
+        if (transform.rotation.eulerAngles.z > maxAngle && transform.rotation.eulerAngles.z < maxAngle + 90)
+            transform.eulerAngles = new Vector3(0, 0, maxAngle - 0.5f);
+        if (transform.rotation.eulerAngles.z > 360 - maxAngle - 90 && transform.rotation.eulerAngles.z < 360 - maxAngle)
+            transform.eulerAngles = new Vector3(0, 0, - maxAngle + 0.5f);
     }
 
+    //Begrenzt die Rotation des U-Boots
     private bool RotationErlaubt(float vert)
     {
         if (vertical > 0)
@@ -65,6 +78,14 @@ public class SubControl : MonoBehaviour
             return false;
         }
         return false;
+    }
+
+    //Torpedo abfeuern
+    private void Torpedo()
+    {
+        //Vector3 torpedePos = new Vector3(transform.position.x + 3.05f, transform.position.y, transform.position.z);
+        GameObject torpedo = Instantiate(torpedoPrefab, torpedoRohr.transform.position, transform.rotation);
+        //torpedo.transform.localPosition = new Vector3(transform.localPosition.x + 3.05f, transform.localPosition.y, transform.localPosition.z);
     }
 }
  
