@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     public bool gameIsRunning;
 
     GameObject playerObj;
-    public int health { get; private set; } //Zustan des U-Boots
+    public int health;                      //Zustan des U-Boots
     public float damageModifier;            //erhöht/reduziert den Schaden am U-Boot - 1.0 ist keine Änderung
-    public MeshRenderer subRenderer;       //Renderer-Komponente des U-Boots
+    public MeshRenderer subRenderer;        //Renderer-Komponente des U-Boots
 
     private float sonarTorpedoTimer;        //Countdown bis zum Start eines unsichtbaren Torpedos
     public float sonarTorpedoTime;          //Startzeit des Countdowns
@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
     {
         gameIsRunning = true;
         playerObj = GameObject.Find("U-Boot-Prefab");
-        health = 100;
         sonarTorpedoTimer = sonarTorpedoTime;
         torpedoLaunched = false;
         rnd = new System.Random();
