@@ -925,7 +925,7 @@ PrefabInstance:
         type: 3}
       propertyPath: funkenKollision
       value: 
-      objectReference: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
+      objectReference: {fileID: 1025115118658340148, guid: 4701d072cea193441a64a71120eb8c44,
         type: 3}
     - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
         type: 3}
