@@ -205,6 +205,7 @@ public class SubControl : MonoBehaviour
             case "Sonar":
                 yield return new WaitForSeconds(sonarCooldown);
                 sonarReady = true;
+                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.SonarBereit);
                 break;
             case "Stoerkoerper":
                 yield return new WaitForSeconds(stoerkoerperCooldown);
