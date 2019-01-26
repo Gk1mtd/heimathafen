@@ -139,7 +139,7 @@ public class ControllerManager : MonoBehaviour
                 GamePadState testState = GamePad.GetState(testPlayerIndex);
                 if (testState.IsConnected)
                 {
-                    //Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
+                    Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
 
 
                     //inverted order so first player will be set first etc. :) 

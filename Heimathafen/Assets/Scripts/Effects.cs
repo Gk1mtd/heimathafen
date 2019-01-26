@@ -15,11 +15,6 @@ public class Effects : MonoBehaviour
     public ParticleSystem funkenKollision;
     public AudioClip funkenKollisionAudio;
     public AudioClip torpedoLaunch;
-    //sprache
-    public List<AudioClip> huellenbruch;
-    public List<AudioClip> sonarBereit;
-
-    private System.Random rnd = new System.Random();
 
     public enum Effekte
     {
@@ -27,9 +22,7 @@ public class Effects : MonoBehaviour
         Sonar,
         Stoerkoerper,
         Funken,
-        TorpedoStart,
-        Huellenbruch,
-        SonarBereit
+        TorpedoStart
     }
 
     void Start()
@@ -64,12 +57,6 @@ public class Effects : MonoBehaviour
                 break;
             case Effekte.TorpedoStart:
                 playerAudioSource.PlayOneShot(torpedoLaunch);
-                break;
-            case Effekte.Huellenbruch:
-                playerAudioSource.PlayOneShot(huellenbruch[rnd.Next(0,huellenbruch.Count)]);
-                break;
-            case Effekte.SonarBereit:
-                playerAudioSource.PlayOneShot(sonarBereit[rnd.Next(0, sonarBereit.Count)]);
                 break;
             default:
                 Debug.Log("Fehler in Effects");

@@ -89,8 +89,6 @@ public class GameManager : MonoBehaviour
         health += (int)mod;
         if (health <= 0)
             YouLost();
-        else if (health <= 40)
-            effectScript.Effekt(playerObj.transform.position, Effects.Effekte.Huellenbruch);
         Debug.Log(health);
         float normalVal = subRenderer.material.GetFloat("_DetailNormalMapScale");
         normalVal += -mod * 0.12f;

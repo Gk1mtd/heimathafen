@@ -9,6 +9,7 @@ public class SubControl : MonoBehaviour
     private Rigidbody body;
     private ControllerManager contManager;
     private GameManager gameMan;
+    private ControllerManager controllerManager;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -36,6 +37,7 @@ public class SubControl : MonoBehaviour
     {
         gameMan = GameManager.instance;
         contManager = ControllerManager.instance;
+        controllerManager = gameMan.GetComponent<ControllerManager>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
@@ -46,7 +48,7 @@ public class SubControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameMan.gameIsRunning && contManager.prevStatePlayer1.IsConnected && contManager.prevStatePlayer2.IsConnected)
+        if (gameMan.gameIsRunning)
         {
             // ######################  Controller 1 = Steuermann #########################
             schub = contManager.statePlayer1.Triggers.Right;
@@ -74,7 +76,7 @@ public class SubControl : MonoBehaviour
                 }
             }
 
-            if(!debug) 
+            else
             {
                 if (contManager.statePlayer1.Buttons.A == XInputDotNetPure.ButtonState.Pressed && sonarReady)
                 {
@@ -106,7 +108,6 @@ public class SubControl : MonoBehaviour
             Vector3 rotation = new Vector3(0, 0, vertical * rotationSpeed);
             transform.Rotate(rotation);
         }
-
         //Bewegung
         forwardSpeed += schub * acceleration;       //Schub addieren
         forwardSpeed -= rueckschub * acceleration;  //Rückschub subtrahieren
@@ -120,8 +121,8 @@ public class SubControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
 
 
-        contManager.increaseRumble(schub*Time.deltaTime, 0, 0);
-        contManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
+        controllerManager.increaseRumble(schub*Time.deltaTime, 0, 0);
+        controllerManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
 
 
     }
@@ -204,7 +205,6 @@ public class SubControl : MonoBehaviour
             case "Sonar":
                 yield return new WaitForSeconds(sonarCooldown);
                 sonarReady = true;
-                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.SonarBereit);
                 break;
             case "Stoerkoerper":
                 yield return new WaitForSeconds(stoerkoerperCooldown);
