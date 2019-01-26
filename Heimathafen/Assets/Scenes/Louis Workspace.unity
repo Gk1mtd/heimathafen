@@ -250,6 +250,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15ff7ff8d7747d14d852a13c05d3d2ad, type: 3}
+--- !u!1 &276148147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7420553057949986474, guid: e28f5c82eecd8b244a91fbb2132e51da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1018191198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &276148148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276148147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12e6b22819ef7b45a1861a340fca87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  rumbleReduce: 0.2
+  maxNaturalRumble: 0.5
+  minNaturalRumble: 0.001
+  player1Rumble:
+  - 0
+  - 0
+  player2Rumble:
+  - 0
+  - 0
 --- !u!1001 &424127556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -443,6 +471,10 @@ PrefabInstance:
         type: 3}
       propertyPath: far clip plane
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 255319308, guid: d32954290319e684795ee8d49cb2742f, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1934918972096724264, guid: d32954290319e684795ee8d49cb2742f, type: 3}
@@ -672,25 +704,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &537377823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537377816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12e6b22819ef7b45a1861a340fca87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  player1Rumble:
-  - 0
-  - 0
-  player2Rumble:
-  - 0
-  - 0
 --- !u!1 &606190855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2365638643500220426, guid: 1c6293279626b46fb8701c08559c8eb7,

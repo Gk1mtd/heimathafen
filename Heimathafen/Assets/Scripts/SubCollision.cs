@@ -20,17 +20,20 @@ public class SubCollision : MonoBehaviour
     //Bei Kollisionen mit Minen und Felsen
     private void OnCollisionEnter(Collision collision)
     {
+        ControllerManager.instance.maxRumble(0);
+
         Vector3 position = collision.contacts[0].point;
         if (collision.gameObject.CompareTag("Mine"))
         {
             Destroy(collision.gameObject);
             gameMan.ChangeHealth(-34 * dmgModifier);
+            gameMan.effectScript.Effekt(position, Effects.Effekte.Explosion);
         }
         else if (collision.gameObject.CompareTag("Felsen"))
         {
             gameMan.ChangeHealth((-subCont.forwardSpeed * 20 * dmgModifier));
+            gameMan.effectScript.Effekt(position, Effects.Effekte.Funken);
         }
-        gameMan.effectScript.Effekt(position, Effects.Effekte.Explosion);
     }
 
     //Beim Erreichen von Triggern (Oberfläche, Ziel)
