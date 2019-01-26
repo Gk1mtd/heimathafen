@@ -74,11 +74,7 @@ public class SubControl : MonoBehaviour
                 }
             }
 
-<<<<<<< HEAD
-            else if (!debug)
-=======
             if(!debug) 
->>>>>>> afc28cb3024f791853dd667c73b83a07ba50a9bb
             {
                 if (contManager.statePlayer1.Buttons.A == XInputDotNetPure.ButtonState.Pressed && sonarReady)
                 {
