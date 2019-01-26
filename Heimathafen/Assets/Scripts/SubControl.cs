@@ -121,8 +121,8 @@ public class SubControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
 
 
-        controllerManager.increaseRumble(schub*Time.deltaTime, 0, 0);
-        controllerManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
+        contManager.increaseRumble(schub*Time.deltaTime, 0, 0);
+        contManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
 
 
     }

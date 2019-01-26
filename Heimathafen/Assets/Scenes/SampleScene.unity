@@ -279,6 +279,34 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 6299434327822282678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &302493914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7420553057949986474, guid: e28f5c82eecd8b244a91fbb2132e51da,
+    type: 3}
+  m_PrefabInstance: {fileID: 7420553059018943186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &302493918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302493914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12e6b22819ef7b45a1861a340fca87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  rumbleReduce: 0
+  maxNaturalRumble: 0
+  minNaturalRumble: 0
+  player1Rumble:
+  - 0
+  - 0
+  player2Rumble:
+  - 0
+  - 0
 --- !u!1001 &976235958
 PrefabInstance:
   m_ObjectHideFlags: 0

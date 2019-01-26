@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 9da142d3ad9124653b61e606a459fc8e
-=======
-guid: 0a6dc4ae138c1944fb5e7f992affda27
->>>>>>> 6c2c123113e8202d3dba80fb214ae37fbe8261c1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -32,17 +28,13 @@ ModelImporter:
     400020: Landscape
     400022: Plane
     2100000: unnamed
-    2100002: Material_001
-<<<<<<< HEAD
-    2100004: Haus_Dach
-    2100006: Haus_Wand
-    2100008: Glas
-    2100010: Haus_Tuer
-    2100012: Poller
-    2100014: Concrete
-    2100016: Wet_Sand
-=======
->>>>>>> 6c2c123113e8202d3dba80fb214ae37fbe8261c1
+    2100002: Haus_Dach
+    2100004: Haus_Wand
+    2100006: Glas
+    2100008: Haus_Tuer
+    2100010: Poller
+    2100012: Concrete
+    2100014: Wet_Sand
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -118,11 +110,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-<<<<<<< HEAD
-    generateSecondaryUV: 1
-=======
     generateSecondaryUV: 0
->>>>>>> 6c2c123113e8202d3dba80fb214ae37fbe8261c1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
