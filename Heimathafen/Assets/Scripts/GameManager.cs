@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private System.Random rnd;              //Für Zufallszahlen
 
     public Effects effectScript;
+    public RumblePack rumblepackScript;
 
 
     // Start is called before the first frame update
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
         rnd = new System.Random();
 
         effectScript = GetComponent<Effects>();
+        rumblepackScript = GetComponent<RumblePack>();
     }
 
     // Update is called once per frame
