@@ -359,6 +359,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  rumbleReduce: 0.095
+  maxNaturalRumble: 0.65
+  minNaturalRumble: 0.05
   player1Rumble:
   - 0
   - 0

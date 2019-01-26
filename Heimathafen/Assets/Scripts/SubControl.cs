@@ -47,21 +47,22 @@ public class SubControl : MonoBehaviour
     {
         if (gameMan.gameIsRunning)
         {
+            //Controller 1 = Steuermann
             schub = Input.GetAxisRaw("Schub");
             rueckschub = Input.GetAxisRaw("Rueckschub");
             vertical = Input.GetAxisRaw("Vertical");
 
-            if (Input.GetButtonDown("Fire1") && torpedoReady)
+            if (Input.GetButtonDown("Fire1") && torpedoReady) //Controller 2
             {
                 Torpedo();
             }
 
-            if (Input.GetButtonDown("Fire2") && sonarReady)
+            if (Input.GetButtonDown("Fire2") && sonarReady) //Controller 1
             {
                 Sonar();
             }
 
-            if (Input.GetButtonDown("Fire3") && stoerkoerperReady)
+            if (Input.GetButtonDown("Fire3") && stoerkoerperReady) //Controller 2
             {
                 Stoerkoerper();
             }
