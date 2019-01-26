@@ -41,5 +41,14 @@ public class SubCollision : MonoBehaviour
         {
             gameMan.YouWon();
         }
+        if (other.CompareTag("OberflaecheWarnung"))
+        {
+            Debug.Log("Zu hoch - Abtauchen!");
+        }
+        if (other.CompareTag("Oberflaeche"))
+        {
+            Debug.Log("Zu hoch - Zerstört");
+            gameMan.YouLost();
+        }
     }
 }

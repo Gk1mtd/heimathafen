@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         playerObj.GetComponent<SubControl>().StoppeUBoot();
     }
 
-    private void YouLost()
+    public void YouLost()
     {
         Debug.Log("You lost");
         gameIsRunning = false;
