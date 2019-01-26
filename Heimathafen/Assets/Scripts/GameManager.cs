@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameIsRunning = true;
-        playerObj = GameObject.Find("U-Boot");
+        playerObj = GameObject.Find("U-Boot-Prefab");
         health = 100;
         sonarTorpedoTimer = sonarTorpedoTime;
         torpedoLaunched = false;
