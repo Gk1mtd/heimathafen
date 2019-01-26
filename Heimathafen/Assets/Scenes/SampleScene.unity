@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 506094035, guid: 8a33c4dfd613e494a9ffc79a817289c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16
+      value: 18.1
       objectReference: {fileID: 0}
     - target: {fileID: 506094035, guid: 8a33c4dfd613e494a9ffc79a817289c5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -795,7 +795,7 @@ PrefabInstance:
     - target: {fileID: 1855639925274493787, guid: d32954290319e684795ee8d49cb2742f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 1855639925274493787, guid: d32954290319e684795ee8d49cb2742f,
         type: 3}
@@ -921,16 +921,11 @@ PrefabInstance:
       propertyPath: sonarTorpedoTime
       value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 7420553057949986472, guid: e28f5c82eecd8b244a91fbb2132e51da,
-        type: 3}
-      propertyPath: health
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
         type: 3}
       propertyPath: funkenKollision
       value: 
-      objectReference: {fileID: 1929774283384694946, guid: 78ed688e500e93047b6f384077cd6e73,
+      objectReference: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
         type: 3}
     - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
         type: 3}
@@ -952,16 +947,5 @@ PrefabInstance:
       propertyPath: stoerkoerperAudio
       value: 
       objectReference: {fileID: 8300000, guid: 8025d25e510e6c646bfe89b6e3f32412, type: 3}
-    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
-        type: 3}
-      propertyPath: funkenKollisionAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: ad2c9ae0175ae15439b3aef1875af328, type: 3}
-    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
-        type: 3}
-      propertyPath: explosion
-      value: 
-      objectReference: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}
