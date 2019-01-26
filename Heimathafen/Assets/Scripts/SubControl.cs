@@ -87,7 +87,13 @@ public class SubControl : MonoBehaviour
         if (transform.rotation.eulerAngles.z > maxAngle && transform.rotation.eulerAngles.z < maxAngle + 90)
             transform.eulerAngles = new Vector3(0, 0, maxAngle - 0.5f);
         if (transform.rotation.eulerAngles.z > 360 - maxAngle - 90 && transform.rotation.eulerAngles.z < 360 - maxAngle)
-            transform.eulerAngles = new Vector3(0, 0, - maxAngle + 0.5f);
+            transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
+
+        //Rumble
+        if (schub > 0 || rueckschub > 0)
+            rumble.player2Rumble[0] = 0.5f;
+        else
+            rumble.player2Rumble[0] = 0.0f;
     }
 
     //Begrenzt die Rotation des U-Boots
