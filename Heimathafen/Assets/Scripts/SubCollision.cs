@@ -52,5 +52,9 @@ public class SubCollision : MonoBehaviour
             gameMan.effectScript.Effekt(transform.position, Effects.Effekte.Explosion);
             gameMan.YouLost();
         }
+        if (other.CompareTag("Text"))
+        {
+            gameMan.GetComponent<GameUI>().ChangeSubtitles(other.GetComponent<SubtitleTrigger>().subtitleText);
+        }
     }
 }

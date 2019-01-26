@@ -9,6 +9,7 @@ TagManager:
   - Ziel
   - Oberflaeche
   - OberflaecheWarnung
+  - Text
   layers:
   - Default
   - TransparentFX
