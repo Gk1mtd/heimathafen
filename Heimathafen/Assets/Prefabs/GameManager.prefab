@@ -76,7 +76,14 @@ MonoBehaviour:
     type: 3}
   funkenKollisionAudio: {fileID: 0}
   torpedoLaunch: {fileID: 8300000, guid: 408b51dc63c55a04dbfe68fbe81fd523, type: 3}
-  huellenbruch: []
+  huellenbruch:
+  - {fileID: 8300000, guid: ff1769c3e35b7d944b8d2c3bd36eaccb, type: 3}
+  - {fileID: 8300000, guid: 66f0fc5fec880ab4eaa97527b8a0df33, type: 3}
+  - {fileID: 8300000, guid: b559f7913fb9caa40b181bd6dda0a5ee, type: 3}
+  - {fileID: 8300000, guid: ff2a398601742f24aad0a9bae7c3b5c6, type: 3}
+  - {fileID: 8300000, guid: b404b0e2e4e14a94390dffcd1c30054d, type: 3}
+  - {fileID: 8300000, guid: e82a182d70557134ab1999a42bbf0d35, type: 3}
+  sonarBereit: []
 --- !u!114 &1085868585
 MonoBehaviour:
   m_ObjectHideFlags: 0
