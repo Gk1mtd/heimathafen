@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure; // Required in C#
@@ -15,7 +16,7 @@ public class RumblePack : MonoBehaviour
     private GamePadState prevStatePlayer1;
 
     [Range(0, 1)]
-    public float[] player1Rumble; //0 = links 1= rechts
+    public float[] player1Rumble = { 0.0f, 0.0f }; //0 = links 1= rechts
 
     //Player2
     private bool player2IndexSet = false;
@@ -25,7 +26,7 @@ public class RumblePack : MonoBehaviour
     private GamePadState prevStatePlayer2;
 
     [Range (0,1)]
-    public float[] player2Rumble; //0 = links 1= rechts
+    public float[] player2Rumble = { 0.0f,0.0f}; //0 = links 1= rechts
 
 
     // Use this for initialization
@@ -49,6 +50,23 @@ public class RumblePack : MonoBehaviour
 
         GamePad.SetVibration(player1Index, player1Rumble[0], player1Rumble[1]);
         GamePad.SetVibration(player2Index, player2Rumble[0], player2Rumble[1]);
+
+        //decrease over time 
+        decreaseRumble();
+
+    }
+
+    private void decreaseRumble()
+    {
+        if (player1Rumble[0] >= 0)
+            player1Rumble[0]--;
+        if (player1Rumble[1] >= 0)
+            player1Rumble[1]--;
+
+        if (player2Rumble[0] >= 0)
+            player2Rumble[0]--;
+        if (player2Rumble[1] >= 0)
+            player2Rumble[1]--;
     }
 
     // Update is called once per frame

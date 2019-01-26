@@ -32,8 +32,7 @@ public class SubControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManObj = GameObject.Find("GameManager");
-        gameMan = gameManObj.GetComponent<GameManager>();
+        gameMan = GameManager.instance;
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
