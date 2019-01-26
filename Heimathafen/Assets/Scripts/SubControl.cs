@@ -5,6 +5,8 @@ using UnityEngine;
 public class SubControl : MonoBehaviour
 {
     private Rigidbody body;
+    private GameObject gameManObj;
+
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
     private float vertical;         //Controller Y-Achse
@@ -13,15 +15,24 @@ public class SubControl : MonoBehaviour
     public float acceleration;      //Beschleunigen / Abbremsen
     public float maxAngle;          //Begrenzt die Rotation des U-Boots
     public float forwardSpeed { get; private set; }     //Die aktuelle Geschwindigkeit
+
     public GameObject torpedoPrefab;
     public Transform torpedoRohr;   //Abfeuern des Torpedos von hier
+    public float torpedoCooldown;   //Cooldownzeit Torpedo
+    private bool torpedoReady;      //false, wenn Cooldown läuft
+
+    public float sonarCooldown;     //Sonar Cooldownzeit
+    private bool sonarReady;        //false, wenn Cooldown läuft
 
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManObj = GameObject.Find("GameManager");
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
+        torpedoReady = true;
+        sonarReady = true;
     }
 
     // Update is called once per frame
@@ -31,9 +42,14 @@ public class SubControl : MonoBehaviour
         rueckschub = Input.GetAxisRaw("Rueckschub");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && torpedoReady)
         {
             Torpedo();
+        }
+
+        if (Input.GetButtonDown("Fire2") && sonarReady)
+        {
+            Sonar();
         }
     }
 
@@ -83,9 +99,38 @@ public class SubControl : MonoBehaviour
     //Torpedo abfeuern
     private void Torpedo()
     {
-        //Vector3 torpedePos = new Vector3(transform.position.x + 3.05f, transform.position.y, transform.position.z);
         GameObject torpedo = Instantiate(torpedoPrefab, torpedoRohr.transform.position, transform.rotation);
-        //torpedo.transform.localPosition = new Vector3(transform.localPosition.x + 3.05f, transform.localPosition.y, transform.localPosition.z);
+        torpedoReady = false;
+        StartCoroutine(Cooldown("Torpedo"));
+    }
+
+    //Sonar starten
+    private void Sonar()
+    {
+        Vector3 sonarPos = new Vector3(transform.position.x + 1.39f, transform.position.y, transform.position.z + 1.0f);
+        gameManObj.GetComponent<Effects>().Effekt(sonarPos, Effects.Effekte.Sonar);
+        sonarReady = false;
+        StartCoroutine(Cooldown("Torpedo"));
+    }
+
+    //Cooldown abwarten
+    IEnumerator Cooldown(string typ)
+    {
+        switch (typ)
+        {
+            case "Torpedo":
+                yield return new WaitForSeconds(torpedoCooldown);
+                torpedoReady = true;
+                break;
+            case "Sonar":
+                yield return new WaitForSeconds(sonarCooldown);
+                sonarReady = true;
+                break;
+            default:
+                Debug.Log("Fehler in SubControl-Cooldown");
+                break;
+        }
+
     }
 }
  

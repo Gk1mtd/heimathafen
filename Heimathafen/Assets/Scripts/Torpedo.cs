@@ -30,7 +30,7 @@ public class Torpedo : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        GameObject.Find("GameManager").GetComponent<Effects>().Explosion(position);
+        GameObject.Find("GameManager").GetComponent<Effects>().Effekt(position, Effects.Effekte.Explosion);
         Destroy(this.gameObject);
     }
 }
