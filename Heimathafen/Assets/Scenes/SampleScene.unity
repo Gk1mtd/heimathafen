@@ -112,6 +112,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &21172418
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2365638643500220426, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Mine 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.4125175
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2082026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622315309341990680, guid: 1c6293279626b46fb8701c08559c8eb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c6293279626b46fb8701c08559c8eb7, type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +477,7 @@ MonoBehaviour:
   torpedoRohr: {fileID: 500224491}
   torpedoCooldown: 5
   sonarCooldown: 5
+  stoerkoerperCooldown: 10
 --- !u!54 &562208018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -466,63 +536,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &581982886
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1602505174, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_Name
-      value: mine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.4455457
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1602505178, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab943127489cdee458e8e2524c89ffe7, type: 3}
 --- !u!1 &928084691
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +660,8 @@ MonoBehaviour:
   explosion: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
     type: 3}
   sonar: {fileID: 9105880090623965250, guid: bf41721edb73dc14da0715514e8189f1, type: 3}
+  stoerkoerper: {fileID: 3713420385934025405, guid: e03a2e1e7c1b69f4aa4c486d32678a30,
+    type: 3}
 --- !u!114 &1070531706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +676,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameIsRunning: 0
   damageModifier: 1
-  sonarTorpedoTime: 3
+  sonarTorpedoTime: 10
+  torpedoMaxDist: 10
+  torpedoMinDist: 5
 --- !u!4 &1070531707
 Transform:
   m_ObjectHideFlags: 0
