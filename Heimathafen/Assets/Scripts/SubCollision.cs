@@ -20,6 +20,8 @@ public class SubCollision : MonoBehaviour
     //Bei Kollisionen mit Minen und Felsen
     private void OnCollisionEnter(Collision collision)
     {
+        gameMan.rumblepackScript.maxRumble(0);
+
         Vector3 position = collision.contacts[0].point;
         if (collision.gameObject.CompareTag("Mine"))
         {
