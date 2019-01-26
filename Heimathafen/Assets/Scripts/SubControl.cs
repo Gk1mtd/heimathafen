@@ -9,7 +9,6 @@ public class SubControl : MonoBehaviour
     private Rigidbody body;
     private ControllerManager contManager;
     private GameManager gameMan;
-    private ControllerManager controllerManager;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -37,7 +36,6 @@ public class SubControl : MonoBehaviour
     {
         gameMan = GameManager.instance;
         contManager = ControllerManager.instance;
-        controllerManager = gameMan.GetComponent<ControllerManager>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
@@ -48,7 +46,7 @@ public class SubControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameMan.gameIsRunning)
+        if (gameMan.gameIsRunning && contManager.prevStatePlayer1.IsConnected && contManager.prevStatePlayer2.IsConnected)
         {
             // ######################  Controller 1 = Steuermann #########################
             schub = contManager.statePlayer1.Triggers.Right;
@@ -76,7 +74,11 @@ public class SubControl : MonoBehaviour
                 }
             }
 
+<<<<<<< HEAD
             else if (!debug)
+=======
+            if(!debug) 
+>>>>>>> afc28cb3024f791853dd667c73b83a07ba50a9bb
             {
                 if (contManager.statePlayer1.Buttons.A == XInputDotNetPure.ButtonState.Pressed && sonarReady)
                 {
@@ -122,8 +124,8 @@ public class SubControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
 
 
-        controllerManager.increaseRumble(schub*Time.deltaTime, 0, 0);
-        controllerManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
+        contManager.increaseRumble(schub*Time.deltaTime, 0, 0);
+        contManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
 
 
     }
