@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SubControl : MonoBehaviour
 {
+    public  bool debug = false;
+
     private Rigidbody body;
-    private GameObject gameManObj;
+    private ControllerManager contManager;
     private GameManager gameMan;
-    private RumblePack rumble;
+    private ControllerManager controllerManager;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -34,7 +36,8 @@ public class SubControl : MonoBehaviour
     void Start()
     {
         gameMan = GameManager.instance;
-        rumble = gameMan.GetComponent<RumblePack>();
+        contManager = ControllerManager.instance;
+        controllerManager = gameMan.GetComponent<ControllerManager>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
@@ -47,25 +50,53 @@ public class SubControl : MonoBehaviour
     {
         if (gameMan.gameIsRunning)
         {
-            //Controller 1 = Steuermann
-            schub = Input.GetAxisRaw("Schub");
-            rueckschub = Input.GetAxisRaw("Rueckschub");
-            vertical = Input.GetAxisRaw("Vertical");
+            // ######################  Controller 1 = Steuermann #########################
+            schub = contManager.statePlayer1.Triggers.Right;
+            rueckschub = contManager.statePlayer1.Triggers.Left;
+            vertical = contManager.statePlayer1.ThumbSticks.Left.Y;
 
-            if (Input.GetButtonDown("Fire1") && torpedoReady) //Controller 2
+            if (debug)
             {
-                Torpedo();
+                if (contManager.statePlayer1.Buttons.A == XInputDotNetPure.ButtonState.Pressed )
+                {
+                    Sonar();
+                }
+
+                // ######################  Controller 2 = Ausguck #########################
+
+                if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed )
+                {
+                    Torpedo();
+                }
+
+
+                if (contManager.statePlayer1.Buttons.X == XInputDotNetPure.ButtonState.Pressed )
+                {
+                    Stoerkoerper();
+                }
             }
 
-            if (Input.GetButtonDown("Fire2") && sonarReady) //Controller 1
+            else
             {
-                Sonar();
-            }
+                if (contManager.statePlayer1.Buttons.A == XInputDotNetPure.ButtonState.Pressed && sonarReady)
+                {
+                    Sonar();
+                }
 
-            if (Input.GetButtonDown("Fire3") && stoerkoerperReady) //Controller 2
-            {
-                Stoerkoerper();
+                // ######################  Controller 2 = Ausguck #########################
+
+                if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed && torpedoReady)
+                {
+                    Torpedo();
+                }
+
+
+                if (contManager.statePlayer2.Buttons.A == XInputDotNetPure.ButtonState.Pressed && stoerkoerperReady)
+                {
+                    Stoerkoerper();
+                }
             }
+            
         }
     }
 
@@ -90,8 +121,8 @@ public class SubControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
 
 
-        rumble.increaseRumble(schub*Time.deltaTime, 0, 0);
-        rumble.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
+        controllerManager.increaseRumble(schub*Time.deltaTime, 0, 0);
+        controllerManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
 
 
     }
@@ -137,7 +168,7 @@ public class SubControl : MonoBehaviour
     private void Sonar()
     {
         Vector3 sonarPos = new Vector3(transform.position.x + 1.39f, transform.position.y, transform.position.z + 1.0f);
-        gameManObj.GetComponent<Effects>().Effekt(sonarPos, Effects.Effekte.Sonar);
+        gameMan.effectScript.Effekt(sonarPos, Effects.Effekte.Sonar);
         sonarReady = false;
         StartCoroutine(Cooldown("Sonar"));
         if (gameMan.torpedoLaunched)
@@ -150,14 +181,14 @@ public class SubControl : MonoBehaviour
     private void Stoerkoerper()
     {
         Vector3 stoerPos = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z);
-        gameManObj.GetComponent<Effects>().Effekt(stoerPos, Effects.Effekte.Stoerkoerper);
+        gameMan.effectScript.Effekt(stoerPos, Effects.Effekte.Stoerkoerper);
         stoerkoerperReady = false;
         StartCoroutine(Cooldown("Stoerkoerper"));
         if (gameMan.torpedoLaunched && (gameMan.torpedoDist < 2.0f))
         {
             Debug.Log("Feindl. Torpedo zerstört");
             Vector3 torpPos = new Vector3(transform.position.x - 2.0f, transform.position.y, transform.position.z);
-            gameManObj.GetComponent<Effects>().Effekt(torpPos, Effects.Effekte.Explosion);
+            gameMan.effectScript.Effekt(torpPos, Effects.Effekte.Explosion);
             gameMan.TorpedoStopped();
         }
     }

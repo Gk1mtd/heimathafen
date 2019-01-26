@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using XInputDotNetPure; // Required in C#
 
-public class RumblePack : MonoBehaviour
+public class ControllerManager : MonoBehaviour
 {
+    public static ControllerManager instance = null;
+
     public bool debug;
     [Range(0,1)]
     public float rumbleReduce;
@@ -20,8 +22,8 @@ public class RumblePack : MonoBehaviour
     private bool player1IndexSet = false;
     private PlayerIndex player1Index;
 
-    private GamePadState statePlayer1;
-    private GamePadState prevStatePlayer1;
+    public GamePadState statePlayer1;
+    public GamePadState prevStatePlayer1;
 
     [Range(0, 1)]
     public float[] player1Rumble = { 0.0f, 0.0f }; //0 = links 1= rechts
@@ -30,17 +32,30 @@ public class RumblePack : MonoBehaviour
     private bool player2IndexSet = false;
     private PlayerIndex player2Index;
 
-    private GamePadState statePlayer2;
-    private GamePadState prevStatePlayer2;
+    public GamePadState statePlayer2;
+    public GamePadState prevStatePlayer2;
 
     [Range (0,1)]
     public float[] player2Rumble = { 0.0f,0.0f}; //0 = links 1= rechts
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        //Check if instance already exists
+        if (instance == null)
 
+            //if not, set instance to this
+            instance = this;
+
+        //If instance already exists and it's not this:
+        else if (instance != this)
+
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            Destroy(gameObject);
+
+        //Sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad(gameObject);
     }
 
     void FixedUpdate()
