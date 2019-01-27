@@ -5,6 +5,7 @@ using UnityEngine;
 public class Effects : MonoBehaviour
 {
     private AudioSource playerAudioSource;
+    public SonarControl sonarControl;
 
     public ParticleSystem explosion;
     public ParticleSystem sonar;
@@ -41,6 +42,7 @@ public class Effects : MonoBehaviour
     void Start()
     {
         playerAudioSource = GameObject.Find("U-Boot-Prefab").GetComponent<AudioSource>();
+        sonarControl = GameObject.Find("Main Camera").GetComponent<SonarControl>();
     }
 
     public void Effekt(Vector3 position, Effekte effekt)
@@ -53,8 +55,9 @@ public class Effects : MonoBehaviour
                 StartCoroutine(DestroyEffect(objekt.gameObject));
                 break;
             case Effekte.Sonar:
-                objekt = Instantiate(sonar, position, Quaternion.identity);
-                StartCoroutine(DestroyEffect(objekt.gameObject));
+                //objekt = Instantiate(sonar, position, Quaternion.identity);
+                //StartCoroutine(DestroyEffect(objekt.gameObject));
+                sonarControl.StartSonar();
                 playerAudioSource.PlayOneShot(sonarAudioStart);
                 if (GetComponent<GameManager>().torpedoLaunched)
                     StartCoroutine(ReturnPing());

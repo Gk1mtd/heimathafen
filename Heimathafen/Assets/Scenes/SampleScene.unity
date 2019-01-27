@@ -1883,46 +1883,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8996536075867924750, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996536075867924750, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4790459570442824485, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: control
-      value: 
-      objectReference: {fileID: 6299434327822282680}
-    - target: {fileID: 4790459570442824485, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 6299434327822282679}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32954290319e684795ee8d49cb2742f, type: 3}
---- !u!54 &6299434327822282679 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 5962285805626414158, guid: d32954290319e684795ee8d49cb2742f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6299434327822282678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6299434327822282680 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6819197950976342806, guid: d32954290319e684795ee8d49cb2742f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6299434327822282678}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457127150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b3a4990dc5e3b4aaa3525f0095ae1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7420553059018943186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1995,5 +1957,10 @@ PrefabInstance:
       propertyPath: subRenderer
       value: 
       objectReference: {fileID: 217346386}
+    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: sonarControl
+      value: 
+      objectReference: {fileID: 1555243219}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}

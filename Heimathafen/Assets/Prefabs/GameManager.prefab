@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f416dd434bf67fa4888ae602e7e20530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonarControl: {fileID: 0}
   explosion: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
     type: 3}
   sonar: {fileID: 9105880090623965250, guid: bf41721edb73dc14da0715514e8189f1, type: 3}

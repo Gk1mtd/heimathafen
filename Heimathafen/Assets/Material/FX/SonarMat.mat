@@ -35,7 +35,7 @@ Material:
     - _Invert: 0
     - _LeadSharp: 10
     - _Radius: -0.2
-    - _ScanDistance: 2131.1394
+    - _ScanDistance: 0
     - _ScanWidth: 10
     - _SizeX: 1
     - _SizeY: 1

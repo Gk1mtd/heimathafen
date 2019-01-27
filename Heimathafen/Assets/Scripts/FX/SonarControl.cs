@@ -23,11 +23,13 @@ public class SonarControl : MonoBehaviour
             ScanDistance += Time.deltaTime * 25;
         }
 
-        if (Input.GetMouseButtonDown(1) || Input.GetButtonDown("Fire2"))
-        {
-            _scanning = true;
-            ScanDistance = 0;
-        }
+        //*** Dieser Block wird jetzt bei Aufruf der Sonar-Funktion über StartSonar() aufgerufen ***
+        //if (Input.GetMouseButtonDown(1) || Input.GetButtonDown("Fire2"))
+        //{
+        //    _scanning = true;
+        //    ScanDistance = 0;
+        //}
+        // ***
 
         //if (Input.GetMouseButtonDown(0))
         //{
@@ -43,6 +45,12 @@ public class SonarControl : MonoBehaviour
         //}
     }
     // End Demo Code
+
+    public void StartSonar()
+    {
+        _scanning = true;
+        ScanDistance = 0;
+    }
 
     void OnEnable()
     {
