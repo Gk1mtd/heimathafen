@@ -95,7 +95,7 @@ public class SubControl : MonoBehaviour
                 }
 
 
-                if (contManager.statePlayer2.Buttons.A == XInputDotNetPure.ButtonState.Pressed && stoerkoerperReady)
+                if (contManager.statePlayer2.Buttons.Y == XInputDotNetPure.ButtonState.Pressed && stoerkoerperReady)
                 {
                     Stoerkoerper();
                 }
