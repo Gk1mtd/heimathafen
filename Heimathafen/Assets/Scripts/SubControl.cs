@@ -48,7 +48,7 @@ public class SubControl : MonoBehaviour
     {
         if (gameMan.gameIsRunning && contManager.prevStatePlayer1.IsConnected && contManager.prevStatePlayer2.IsConnected)
         {
-            // ######################  Controller 1 = Steuermann #########################
+            
             schub = contManager.statePlayer1.Triggers.Right;
             rueckschub = contManager.statePlayer1.Triggers.Left;
             vertical = contManager.statePlayer1.ThumbSticks.Left.Y;
@@ -59,8 +59,7 @@ public class SubControl : MonoBehaviour
                 {
                     Sonar();
                 }
-
-                // ######################  Controller 2 = Ausguck #########################
+                
 
                 if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed )
                 {
@@ -80,8 +79,7 @@ public class SubControl : MonoBehaviour
                 {
                     Sonar();
                 }
-
-                // ######################  Controller 2 = Ausguck #########################
+                
 
                 if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed && torpedoReady)
                 {
