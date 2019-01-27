@@ -2755,10 +2755,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sub: {fileID: 457127150}
-  minFOV: 45
-  maxFOV: 100
-  fovSensitivity: 5
-  camPOISensitivity: 10
+  minFOV: 40
+  maxFOV: 60
+  distanceToFollow: 10
+  fovSensitivity: 1
+  camPOISensitivity: 2
   distToSub: 0
 --- !u!82 &1555243218
 AudioSource:
@@ -2961,7 +2962,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2993,7 +2994,7 @@ Transform:
   - {fileID: 143240213}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 34.911003, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -59.967003}
 --- !u!1001 &1638396562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4421,5 +4422,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b,
         type: 3}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: minNaturalRumble
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.data[0]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.data[1]
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}
