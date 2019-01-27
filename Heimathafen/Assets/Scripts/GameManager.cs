@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 #if !UNITY_EDITOR_OSX
 
 public class GameManager : MonoBehaviour
@@ -107,6 +108,8 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You won");
+        if (SceneManager.GetActiveScene().name == "TutorialScene")
+            SceneManager.LoadScene("Level1");
     }
 
     public void YouLost()
@@ -115,6 +118,7 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You lost");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     //Unsichtbares Torpedo starten
