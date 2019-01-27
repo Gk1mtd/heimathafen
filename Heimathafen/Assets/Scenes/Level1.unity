@@ -17403,11 +17403,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sub: {fileID: 457127150}
-  minFOV: 45
-  maxFOV: 100
-  distanceToFollow: 0
-  fovSensitivity: 5
-  camPOISensitivity: 1
+  minFOV: 40
+  maxFOV: 60
+  distanceToFollow: 10
+  fovSensitivity: 1
+  camPOISensitivity: 5
   distToSub: 0
 --- !u!82 &1555243218
 AudioSource:
@@ -17610,7 +17610,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 55
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -17636,7 +17636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555243216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.881, y: 1.23, z: -10.57}
+  m_LocalPosition: {x: 0.29, y: 1.23, z: -10.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 143240213}
@@ -23035,6 +23035,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6819197950976342806, guid: d32954290319e684795ee8d49cb2742f,
+        type: 3}
+      propertyPath: spotlightSesitivity
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32954290319e684795ee8d49cb2742f, type: 3}
 --- !u!1001 &7420553059018943186
@@ -23141,5 +23146,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 198000012777718758, guid: acf39d9f4addf294d93fa56fa373961b,
         type: 3}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.data[0]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.data[1]
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}

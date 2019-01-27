@@ -108,7 +108,12 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You won");
+        LoadYourAsyncScene("Level1");
         if (SceneManager.GetActiveScene().name == "TutorialScene")
+        {
+            LoadYourAsyncScene("Level1");
+        }
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
             LoadYourAsyncScene("Outro");
         }
