@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if !UNITY_EDITOR_OSX
 
 public class SubParticles : MonoBehaviour
 {
@@ -15,3 +16,4 @@ public class SubParticles : MonoBehaviour
         em.rateOverTime = Mathf.Abs(control.forwardSpeed * particleRate);
     }
 }
+#endif
