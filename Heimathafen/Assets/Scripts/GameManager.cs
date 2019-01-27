@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
@@ -109,7 +109,9 @@ public class GameManager : MonoBehaviour
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You won");
         if (SceneManager.GetActiveScene().name == "TutorialScene")
-            SceneManager.LoadScene("Level1");
+        {
+            LoadYourAsyncScene("Outro");
+        }
     }
 
     public void YouLost()
@@ -118,7 +120,8 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You lost");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Application.Quit();
     }
 
     //Unsichtbares Torpedo starten
@@ -142,24 +145,23 @@ public class GameManager : MonoBehaviour
         GetComponent<GameUI>().ChangeMessages("Torpedo intercepted!");
     }
 
-    /*
-    IEnumerator LoadYourAsyncScene()
+    
+    IEnumerator LoadYourAsyncScene(string name)
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SampleScene");
+        Debug.Log("methodloadinit");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(name);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
-            loadText.GetComponent<Text>().text = "Level";
-            loadText.GetComponent<Text>().fontSize = 150;
+            Debug.Log("Yield");
             yield return null;
         }
     }
-    */
+    
 }
 #endif

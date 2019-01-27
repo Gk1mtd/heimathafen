@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if !UNITY_EDITOR_OSX
 using XInputDotNetPure;
-
+#if !UNITY_EDITOR_OSX
 
 public class SubControl : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class SubControl : MonoBehaviour
     private Rigidbody body;
     private ControllerManager contManager;
     private GameManager gameMan;
+
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -32,6 +33,9 @@ public class SubControl : MonoBehaviour
 
     public float stoerkoerperCooldown;  //Störkörper Cooldownzeit
     private bool stoerkoerperReady;     //false, wenn Cooldown läuft
+
+    public GameObject spotlight;
+    public float spotlightSesitivity=10.0f;
 
 
     // Start is called before the first frame update
@@ -54,6 +58,8 @@ public class SubControl : MonoBehaviour
             schub = contManager.statePlayer1.Triggers.Right;
             rueckschub = contManager.statePlayer1.Triggers.Left;
             vertical = contManager.statePlayer1.ThumbSticks.Left.Y;
+
+            spotlightRotation();
 
             if (debug)
             {
@@ -89,13 +95,18 @@ public class SubControl : MonoBehaviour
                 }
 
 
-                if (contManager.statePlayer2.Buttons.A == XInputDotNetPure.ButtonState.Pressed && stoerkoerperReady)
+                if (contManager.statePlayer2.Buttons.Y == XInputDotNetPure.ButtonState.Pressed && stoerkoerperReady)
                 {
                     Stoerkoerper();
                 }
             }
             
         }
+    }
+
+    private void spotlightRotation()
+    {
+        spotlight.transform.eulerAngles = new Vector3(spotlight.transform.eulerAngles.x - contManager.statePlayer2.ThumbSticks.Left.Y * Time.deltaTime * spotlightSesitivity, spotlight.transform.eulerAngles.y + contManager.statePlayer2.ThumbSticks.Left.X*Time.deltaTime*spotlightSesitivity, 0);
     }
 
     void FixedUpdate()
