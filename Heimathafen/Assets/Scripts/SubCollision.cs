@@ -55,11 +55,14 @@ public class SubCollision : MonoBehaviour
         }
         if (other.CompareTag("Text"))
         {
-            gameMan.GetComponent<GameUI>().ChangeSubtitles(other.GetComponent<SubtitleTrigger>().subtitleText);
-            if (other.GetComponent<SubtitleTrigger>().image1 != null)
-                gameMan.GetComponent<GameUI>().ChangeImage1(other.GetComponent<SubtitleTrigger>().image1);
-            if (other.GetComponent<SubtitleTrigger>().image2 != null)
-                gameMan.GetComponent<GameUI>().ChangeImage2(other.GetComponent<SubtitleTrigger>().image2);
+            SubtitleTrigger triggerBox = other.GetComponent<SubtitleTrigger>();
+            gameMan.GetComponent<GameUI>().ChangeSubtitles(triggerBox.subtitleText);
+            if (triggerBox.image1 != null)
+                gameMan.GetComponent<GameUI>().ChangeImage1(triggerBox.image1);
+            if (triggerBox.image2 != null)
+                gameMan.GetComponent<GameUI>().ChangeImage2(triggerBox.image2);
+            if (triggerBox.launchEnemyTorpedo)
+                gameMan.StartSonarTorpedo();
         }
     }
 }
