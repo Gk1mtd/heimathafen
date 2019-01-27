@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7420553057949986473}
   - component: {fileID: 7420553057949986472}
   - component: {fileID: 7420553057949986475}
-  - component: {fileID: 302493918}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,11 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameIsRunning: 0
   damageModifier: 1
-  subRenderer: {fileID: 0}
   sonarTorpedoTime: 10
   torpedoMaxDist: 10
   torpedoMinDist: 5
-  effectScript: {fileID: 0}
 --- !u!114 &7420553057949986475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,73 +64,5 @@ MonoBehaviour:
   explosion: {fileID: 1929774283384694946, guid: 3d09f86483b93044eb110d1c91842cbd,
     type: 3}
   sonar: {fileID: 9105880090623965250, guid: bf41721edb73dc14da0715514e8189f1, type: 3}
-  sonarAudioStart: {fileID: 8300000, guid: 4f8c7db62dfb4ea4488554a9a7f67611, type: 3}
   stoerkoerper: {fileID: 3713420385934025405, guid: e03a2e1e7c1b69f4aa4c486d32678a30,
     type: 3}
-  stoerkoerperAudio: {fileID: 0}
-  funkenKollision: {fileID: 1025115118658340148, guid: 4701d072cea193441a64a71120eb8c44,
-    type: 3}
-  torpedoLaunch: {fileID: 8300000, guid: 408b51dc63c55a04dbfe68fbe81fd523, type: 3}
-  huellenbruch:
-  - {fileID: 8300000, guid: ff1769c3e35b7d944b8d2c3bd36eaccb, type: 3}
-  - {fileID: 8300000, guid: 66f0fc5fec880ab4eaa97527b8a0df33, type: 3}
-  - {fileID: 8300000, guid: b559f7913fb9caa40b181bd6dda0a5ee, type: 3}
-  - {fileID: 8300000, guid: ff2a398601742f24aad0a9bae7c3b5c6, type: 3}
-  - {fileID: 8300000, guid: b404b0e2e4e14a94390dffcd1c30054d, type: 3}
-  - {fileID: 8300000, guid: e82a182d70557134ab1999a42bbf0d35, type: 3}
-  sonarBereit:
-  - {fileID: 8300000, guid: 69e88769322b6874bbfd833c301eea1e, type: 3}
-  - {fileID: 8300000, guid: f384d0f5982e18948a7d81205c1bfdd1, type: 3}
-  - {fileID: 8300000, guid: 58feba326e093784da401d50a39f16d6, type: 3}
-  - {fileID: 8300000, guid: d768bde791ad20f4cb518f8dd31e3080, type: 3}
-  - {fileID: 8300000, guid: 09494f8faa9747d4087625507bb48453, type: 3}
-  - {fileID: 8300000, guid: 54e76af1bee88204584ce53df9ec922d, type: 3}
-  stoerkoerperBereit:
-  - {fileID: 8300000, guid: 4c9cc1e21e92b814e8a3fe399f89ea4a, type: 3}
-  - {fileID: 8300000, guid: 4c9bc6f051d14344f8aea094ed23a232, type: 3}
-  - {fileID: 8300000, guid: 742e41a03c469bb4ca11ef5efc53d52b, type: 3}
-  - {fileID: 8300000, guid: d57078b8e51520a4aa503da63278c3fe, type: 3}
-  - {fileID: 8300000, guid: 40e0ba95e4c7f2f4a8ea2509e7297f12, type: 3}
-  - {fileID: 8300000, guid: 9b52111c6ac536141b164fbd35ba1534, type: 3}
-  feindlichesTorpedo:
-  - {fileID: 8300000, guid: 81d46fa4e69ac3d4484551ea0495857d, type: 3}
-  - {fileID: 8300000, guid: 42d8d05e4862af047b9076c98338a912, type: 3}
-  - {fileID: 8300000, guid: b4dd3ee9af0c9a945b03f54f7a996335, type: 3}
-  - {fileID: 8300000, guid: 7e15b035a4d8dbe4aaa0f98e54a8dbc2, type: 3}
-  - {fileID: 8300000, guid: d8a549d8ea57b6145817af6381e366d2, type: 3}
-  - {fileID: 8300000, guid: 8a9b07313281c164cb987f35c5f3e76f, type: 3}
-  torpedoBereit:
-  - {fileID: 8300000, guid: 875783f2a1b265a42b495da4f608aa9d, type: 3}
-  - {fileID: 8300000, guid: 0ff3a66535bf53f40853f07871be6685, type: 3}
-  - {fileID: 8300000, guid: 4b45cbe6312454041a6091731e7fcba6, type: 3}
-  - {fileID: 8300000, guid: 2c31eb163a37b504a9580fae30a9bbf7, type: 3}
-  - {fileID: 8300000, guid: fdb853c4bc4d225439936a80c825e4d4, type: 3}
-  - {fileID: 8300000, guid: e3f8881690a47254581c08ab07180c7c, type: 3}
-  zuHoch:
-  - {fileID: 8300000, guid: 9d7ea697d6a947041aea34c42bdea57c, type: 3}
-  - {fileID: 8300000, guid: 8b9d5634af3eae74dab562a4fd76b4d1, type: 3}
-  - {fileID: 8300000, guid: bbfc46689d7e29b4e92e2848a51cda6c, type: 3}
-  - {fileID: 8300000, guid: 441096df69114134281fafbb994e4568, type: 3}
-  - {fileID: 8300000, guid: 69dab22f31756be4d82060db37241165, type: 3}
---- !u!114 &302493918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7420553057949986474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12e6b22819ef7b45a1861a340fca87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 1
-  rumbleReduce: 0.2
-  maxNaturalRumble: 0.3
-  minNaturalRumble: 0
-  player1Rumble:
-  - 0
-  - 0
-  player2Rumble:
-  - 0
-  - 0

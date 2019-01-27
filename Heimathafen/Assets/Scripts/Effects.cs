@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+#if !UNITY_EDITOR_OSX
 public class Effects : MonoBehaviour
 {
     private AudioSource playerAudioSource;
@@ -121,3 +121,4 @@ public class Effects : MonoBehaviour
         playerAudioSource.PlayOneShot(sonarAudioStart);
     }
 }
+#endif

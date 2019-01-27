@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if !UNITY_EDITOR_OSX
 
 public class SubControl : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class SubControl : MonoBehaviour
     private Rigidbody body;
     private ControllerManager contManager;
     private GameManager gameMan;
-    private ControllerManager controllerManager;
 
     private float schub;            //Controller Rechter Trigger
     private float rueckschub;       //Controller Linker Trigger
@@ -37,7 +37,6 @@ public class SubControl : MonoBehaviour
     {
         gameMan = GameManager.instance;
         contManager = ControllerManager.instance;
-        controllerManager = gameMan.GetComponent<ControllerManager>();
         body = GetComponent<Rigidbody>();
         forwardSpeed = 0.0f;
         torpedoReady = true;
@@ -218,4 +217,4 @@ public class SubControl : MonoBehaviour
 
     }
 }
- 
+#endif

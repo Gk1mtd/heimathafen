@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if !UNITY_EDITOR_OSX
 using XInputDotNetPure; // Required in C#
 
 public class ControllerManager : MonoBehaviour
@@ -147,7 +148,8 @@ public class ControllerManager : MonoBehaviour
                         player2IndexSet = true;
                     }
 
-                    else if (!player1IndexSet || !prevStatePlayer1.IsConnected)
+                    //else if for two controller :)
+                     else if (!player1IndexSet || !prevStatePlayer1.IsConnected)
                     {
                         Debug.Log(string.Format("GamePad {0}", testPlayerIndex));
                         player1Index = testPlayerIndex;
@@ -195,3 +197,4 @@ public class ControllerManager : MonoBehaviour
         }
     }
 }
+#endif
