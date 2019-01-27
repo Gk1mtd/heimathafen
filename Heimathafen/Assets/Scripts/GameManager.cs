@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Gewonnen");
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
-        GetComponent<GameUI>().LostPanel();
+        GetComponent<GameUI>().ChangeSubtitles("You won");
     }
 
     public void YouLost()
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("You lost");
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
-        GetComponent<GameUI>().LostPanel();
+        GetComponent<GameUI>().ChangeSubtitles("You lost");
     }
 
     //Unsichtbares Torpedo starten
