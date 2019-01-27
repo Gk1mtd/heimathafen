@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using XInputDotNetPure;
 #if !UNITY_EDITOR_OSX
+using XInputDotNetPure;
+
 
 public class SubControl : MonoBehaviour
 {
