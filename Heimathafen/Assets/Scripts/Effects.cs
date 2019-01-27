@@ -9,15 +9,17 @@ public class Effects : MonoBehaviour
     public ParticleSystem explosion;
     public ParticleSystem sonar;
     public AudioClip sonarAudioStart;
-    public List<AudioClip> sonarPitch;
     public ParticleSystem stoerkoerper;
     public AudioClip stoerkoerperAudio;
     public ParticleSystem funkenKollision;
-    public AudioClip funkenKollisionAudio;
     public AudioClip torpedoLaunch;
     //sprache
     public List<AudioClip> huellenbruch;
     public List<AudioClip> sonarBereit;
+    public List<AudioClip> stoerkoerperBereit;
+    public List<AudioClip> feindlichesTorpedo;
+    public List<AudioClip> torpedoBereit;
+    public List<AudioClip> zuHoch;
 
     private System.Random rnd = new System.Random();
 
@@ -29,14 +31,18 @@ public class Effects : MonoBehaviour
         Funken,
         TorpedoStart,
         Huellenbruch,
-        SonarBereit
+        SonarBereit,
+        StoerkoerperBereit,
+        FeindlTorpedo,
+        TorpedoBereit,
+        ZuHoch
     }
 
     void Start()
     {
         playerAudioSource = GameObject.Find("U-Boot-Prefab").GetComponent<AudioSource>();
     }
-    
+
     public void Effekt(Vector3 position, Effekte effekt)
     {
         ParticleSystem objekt;
@@ -66,10 +72,22 @@ public class Effects : MonoBehaviour
                 playerAudioSource.PlayOneShot(torpedoLaunch);
                 break;
             case Effekte.Huellenbruch:
-                playerAudioSource.PlayOneShot(huellenbruch[rnd.Next(0,huellenbruch.Count)]);
+                playerAudioSource.PlayOneShot(huellenbruch[rnd.Next(0, huellenbruch.Count)]);
                 break;
             case Effekte.SonarBereit:
                 playerAudioSource.PlayOneShot(sonarBereit[rnd.Next(0, sonarBereit.Count)]);
+                break;
+            case Effekte.StoerkoerperBereit:
+                playerAudioSource.PlayOneShot(stoerkoerperBereit[rnd.Next(0, stoerkoerperBereit.Count)]);
+                break;
+            case Effekte.FeindlTorpedo:
+                playerAudioSource.PlayOneShot(feindlichesTorpedo[rnd.Next(0, feindlichesTorpedo.Count)]);
+                break;
+            case Effekte.TorpedoBereit:
+                playerAudioSource.PlayOneShot(torpedoBereit[rnd.Next(0, torpedoBereit.Count)]);
+                break;
+            case Effekte.ZuHoch:
+                playerAudioSource.PlayOneShot(zuHoch[rnd.Next(0, zuHoch.Count)]);
                 break;
             default:
                 Debug.Log("Fehler in Effects");
