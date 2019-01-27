@@ -11,7 +11,7 @@ public class ControllerManager : MonoBehaviour
 
     public bool debug;
     [Range(0,1)]
-    public float rumbleReduce;
+    public float[] rumbleReduce;
 
     [Range(0.00f,1.0f)]
     public float maxNaturalRumble;
@@ -21,7 +21,7 @@ public class ControllerManager : MonoBehaviour
 
     //Player1
     private bool player1IndexSet = false;
-    private PlayerIndex player1Index;
+    public PlayerIndex player1Index;
 
     public GamePadState statePlayer1;
     public GamePadState prevStatePlayer1;
@@ -31,7 +31,7 @@ public class ControllerManager : MonoBehaviour
 
     //Player2
     private bool player2IndexSet = false;
-    private PlayerIndex player2Index;
+    public PlayerIndex player2Index;
 
     public GamePadState statePlayer2;
     public GamePadState prevStatePlayer2;
@@ -97,11 +97,11 @@ public class ControllerManager : MonoBehaviour
     {
         if (player == 0)
         {
-            player1Rumble[0] = Mathf.Clamp(player1Rumble[0] + increase, minNaturalRumble, maxNaturalRumble);
+            player1Rumble[motor] = Mathf.Clamp(player1Rumble[motor] + increase, minNaturalRumble, maxNaturalRumble);
         }
         if (player == 1)
         {
-            player2Rumble[0] = Mathf.Clamp(player2Rumble[0] + increase, minNaturalRumble, maxNaturalRumble);
+            player2Rumble[motor] = Mathf.Clamp(player2Rumble[motor] + increase, minNaturalRumble, maxNaturalRumble);
         }
 
     }
@@ -110,21 +110,29 @@ public class ControllerManager : MonoBehaviour
         private void decreaseRumble()
     {
         if (player1Rumble[0] > 0.0f)
-            player1Rumble[0] -= Time.deltaTime * rumbleReduce;
+            player1Rumble[0] -= Time.deltaTime * rumbleReduce[0];
         if (player1Rumble[1] > 0.0f)
-            player1Rumble[1] -= Time.deltaTime * rumbleReduce;
+            player1Rumble[1] -= Time.deltaTime * rumbleReduce[1];
 
         player1Rumble[0] = Mathf.Clamp(player1Rumble[0], minNaturalRumble, 1.0f);
         player1Rumble[1] = Mathf.Clamp(player1Rumble[1], minNaturalRumble, 1.0f);
 
         if (player2Rumble[0] > 0.0f)
-            player2Rumble[0] -= Time.deltaTime * rumbleReduce;
+            player2Rumble[0] -= Time.deltaTime * rumbleReduce[0];
         if (player2Rumble[1] > 0.0f)
-            player2Rumble[1] -= Time.deltaTime*rumbleReduce;
+            player2Rumble[1] -= Time.deltaTime * rumbleReduce[1];
 
         player2Rumble[0] = Mathf.Clamp(player2Rumble[0], minNaturalRumble, maxNaturalRumble);
         player2Rumble[1] = Mathf.Clamp(player2Rumble[1], minNaturalRumble, maxNaturalRumble);
 
+    }
+
+    internal void noRumble()
+    {
+        player1Rumble[0] = 0.0f;
+        player1Rumble[1] = 0.0f;
+        player2Rumble[0] = 0.0f;
+        player2Rumble[1] = 0.0f;
     }
 
     // Update is called once per frame

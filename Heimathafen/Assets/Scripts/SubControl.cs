@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XInputDotNetPure;
 #if !UNITY_EDITOR_OSX
 
 public class SubControl : MonoBehaviour
@@ -49,7 +50,6 @@ public class SubControl : MonoBehaviour
     {
         if (gameMan.gameIsRunning)
         {
-            
             schub = contManager.statePlayer1.Triggers.Right;
             rueckschub = contManager.statePlayer1.Triggers.Left;
             vertical = contManager.statePlayer1.ThumbSticks.Left.Y;
@@ -159,6 +159,7 @@ public class SubControl : MonoBehaviour
         torpedoReady = false;
         StartCoroutine(Cooldown("Torpedo"));
         gameMan.GetComponent<Effects>().Effekt(transform.position, Effects.Effekte.TorpedoStart);
+        contManager.increaseRumble(0.6f, 0 , 1);//set rumble hard
     }
 
     //Sonar starten

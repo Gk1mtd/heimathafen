@@ -936,6 +936,7 @@ MonoBehaviour:
   sub: {fileID: 457127150}
   minFOV: 45
   maxFOV: 100
+  distanceToFollow: 11.5
   fovSensitivity: 5
   camPOISensitivity: 10
   distToSub: 0
@@ -1962,5 +1963,20 @@ PrefabInstance:
       propertyPath: sonarControl
       value: 
       objectReference: {fileID: 1555243219}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.data[0]
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011182923718235282, guid: e28f5c82eecd8b244a91fbb2132e51da,
+        type: 3}
+      propertyPath: rumbleReduce.Array.data[1]
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}

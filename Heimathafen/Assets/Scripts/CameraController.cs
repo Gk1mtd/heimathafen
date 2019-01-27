@@ -10,6 +10,9 @@ public class CameraController : MonoBehaviour
     public float minFOV;
     public float maxFOV;
 
+    [Range(9,15)]
+    public float distanceToFollow;
+
     [Range(1,10)]
     public float fovSensitivity =1.0f;
 
@@ -34,7 +37,7 @@ public class CameraController : MonoBehaviour
 
         distToSub = Vector3.Distance(transform.position, sub.transform.position);
         transform.LookAt(sub.transform.position + new Vector3(sub.GetComponent<SubControl>().forwardSpeed/camPOISensitivity + (ControllerManager.instance.statePlayer2.ThumbSticks.Right.X * camPOISensitivity), 0, 0));
-        if (distToSub > 12.0f)
+        if (distToSub > distanceToFollow)
         {
             transform.parent = sub.transform;
         }

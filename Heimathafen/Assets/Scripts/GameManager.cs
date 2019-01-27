@@ -83,6 +83,10 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            ControllerManager.instance.noRumble();
+        }
     }
 
     public void ChangeHealth(float mod)
