@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class GameUI : MonoBehaviour
     private Image image2;
     private Color white;
     private Color transparent;
+
+    private GameObject lostPanel;
 
     private enum UIobjects
     {
@@ -27,6 +30,9 @@ public class GameUI : MonoBehaviour
         image2 = GameObject.Find("SubImg2").GetComponent<Image>();
         image1.gameObject.SetActive(false);
         image2.gameObject.SetActive(false);
+
+        lostPanel = GameObject.Find("YouLostPanel");
+        lostPanel.SetActive(false);
     }
 
     public void ChangeImage1(Sprite img)
@@ -52,6 +58,23 @@ public class GameUI : MonoBehaviour
         StartCoroutine(RemoveSubtitles(UIobjects.Subtitle));
     }
 
+    public void LostPanel()
+    {
+        lostPanel.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void Restart()
+    {
+        lostPanel.SetActive(false);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
     IEnumerator RemoveSubtitles(UIobjects obj)
     {
         yield return new WaitForSeconds(subtitleDisplayTime);
@@ -70,7 +93,5 @@ public class GameUI : MonoBehaviour
                 Debug.Log("Fehler in UI");
                 break;
         }
-
-
     }
 }

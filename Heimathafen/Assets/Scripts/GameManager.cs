@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Gewonnen");
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
+        GetComponent<GameUI>().LostPanel();
     }
 
     public void YouLost()
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("You lost");
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
+        GetComponent<GameUI>().LostPanel();
     }
 
     //Unsichtbares Torpedo starten
