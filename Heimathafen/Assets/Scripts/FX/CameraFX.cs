@@ -23,7 +23,6 @@ public class CameraFX : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Quaternion.identity;
         underwaterMat.SetFloat("_PixelOffset", pixelOffset);
         underwaterMat.SetFloat("_NoiseScale", noiseScale);
         underwaterMat.SetFloat("_NoiseFrequency", noiseFrequency);
