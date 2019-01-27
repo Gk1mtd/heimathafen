@@ -113,10 +113,11 @@ public class GameManager : MonoBehaviour
     }
 
     //Unsichtbares Torpedo starten
-    private void StartSonarTorpedo()
+    public void StartSonarTorpedo()
     {
         Debug.Log("Starte Torpedo");
-        int max = Mathf.Min((int)sonarTorpedoTimer - 1, torpedoMaxDist);
+        int max = sonarTorpedoTimer - 1 > 1 ? Mathf.Min((int)sonarTorpedoTimer - 1, torpedoMaxDist) : torpedoMaxDist;
+        //int max = Mathf.Min((int)sonarTorpedoTimer - 1, torpedoMaxDist);
         int min = torpedoMinDist;
         if (max < min)
             Debug.Log("Torpedo-Zeit zu kurz");

@@ -8,4 +8,5 @@ public class SubtitleTrigger : MonoBehaviour
     public string subtitleText;
     public Sprite image1;
     public Sprite image2;
+    public bool launchEnemyTorpedo;
 }
