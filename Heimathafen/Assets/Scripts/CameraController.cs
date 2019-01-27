@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         GetComponent<Camera>().fieldOfView = tempFOV;
 
         distToSub = Vector3.Distance(transform.position, sub.transform.position);
-        transform.LookAt(sub.transform.position + new Vector3(sub.GetComponent<SubControl>().forwardSpeed + (ControllerManager.instance.statePlayer2.ThumbSticks.Right.X* camPOISensitivity), 0, 0));
+        transform.LookAt(sub.transform.position + new Vector3(sub.GetComponent<SubControl>().forwardSpeed/camPOISensitivity + (ControllerManager.instance.statePlayer2.ThumbSticks.Right.X * camPOISensitivity), 0, 0));
         if (distToSub > 12.0f)
         {
             transform.parent = sub.transform;
