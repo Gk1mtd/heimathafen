@@ -345,6 +345,12 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 6299434327822282678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &457127150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4905657789879900069, guid: d32954290319e684795ee8d49cb2742f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6299434327822282678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547797732
 GameObject:
   m_ObjectHideFlags: 0
