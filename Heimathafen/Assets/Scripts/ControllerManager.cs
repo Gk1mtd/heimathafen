@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if !UNITY_EDITOR_OSX
 using XInputDotNetPure; // Required in C#
 
 public class ControllerManager : MonoBehaviour
@@ -196,3 +197,4 @@ public class ControllerManager : MonoBehaviour
         }
     }
 }
+#endif

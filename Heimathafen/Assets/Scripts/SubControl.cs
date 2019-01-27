@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if !UNITY_EDITOR_OSX
 
 public class SubControl : MonoBehaviour
 {
@@ -216,4 +217,4 @@ public class SubControl : MonoBehaviour
 
     }
 }
- 
+#endif
