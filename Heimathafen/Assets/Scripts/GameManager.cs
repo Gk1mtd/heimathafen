@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
         float normalVal = subRenderer.material.GetFloat("_DetailNormalMapScale");
         normalVal += -mod * 0.12f;
         subRenderer.material.SetFloat("_DetailNormalMapScale", normalVal);
+        GetComponent<GameUI>().ChangeMessages("We're taking damage!");
     }
 
     public void YouWon()
@@ -119,7 +120,6 @@ public class GameManager : MonoBehaviour
     //Unsichtbares Torpedo starten
     public void StartSonarTorpedo()
     {
-        Debug.Log("Starte Torpedo");
         int max = sonarTorpedoTimer - 1 > 1 ? Mathf.Min((int)sonarTorpedoTimer - 1, torpedoMaxDist) : torpedoMaxDist;
         //int max = Mathf.Min((int)sonarTorpedoTimer - 1, torpedoMaxDist);
         int min = torpedoMinDist;
@@ -128,12 +128,14 @@ public class GameManager : MonoBehaviour
         torpedoDist = rnd.Next(min, max);
         torpedoLaunched = true;
         effectScript.Effekt(playerObj.transform.position, Effects.Effekte.FeindlTorpedo);
+        GetComponent<GameUI>().ChangeMessages("Enemy torpedo detected!");
     }
 
     //Torpedo abgefangen
     public void TorpedoStopped()
     {
         torpedoLaunched = false;
+        GetComponent<GameUI>().ChangeMessages("Torpedo intercepted!");
     }
 }
 #endif
