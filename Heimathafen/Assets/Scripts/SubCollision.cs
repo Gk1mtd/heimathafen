@@ -45,12 +45,20 @@ public class SubCollision : MonoBehaviour
         }
         if (other.CompareTag("OberflaecheWarnung"))
         {
-            Debug.Log("Zu hoch - Abtauchen!");
+            gameMan.effectScript.Effekt(transform.position, Effects.Effekte.ZuHoch);
         }
         if (other.CompareTag("Oberflaeche"))
         {
-            Debug.Log("Zu hoch - Zerstört");
+            gameMan.effectScript.Effekt(transform.position, Effects.Effekte.Explosion);
             gameMan.YouLost();
+        }
+        if (other.CompareTag("Text"))
+        {
+            gameMan.GetComponent<GameUI>().ChangeSubtitles(other.GetComponent<SubtitleTrigger>().subtitleText);
+            if (other.GetComponent<SubtitleTrigger>().image1 != null)
+                gameMan.GetComponent<GameUI>().ChangeImage1(other.GetComponent<SubtitleTrigger>().image1);
+            if (other.GetComponent<SubtitleTrigger>().image2 != null)
+                gameMan.GetComponent<GameUI>().ChangeImage2(other.GetComponent<SubtitleTrigger>().image2);
         }
     }
 }

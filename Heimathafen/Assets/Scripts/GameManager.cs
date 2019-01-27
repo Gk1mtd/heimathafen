@@ -119,6 +119,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Torpedo-Zeit zu kurz");
         torpedoDist = rnd.Next(min, max);
         torpedoLaunched = true;
+        effectScript.Effekt(playerObj.transform.position, Effects.Effekte.FeindlTorpedo);
     }
 
     //Torpedo abgefangen

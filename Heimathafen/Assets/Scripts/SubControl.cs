@@ -50,7 +50,7 @@ public class SubControl : MonoBehaviour
     {
         if (gameMan.gameIsRunning)
         {
-            // ######################  Controller 1 = Steuermann #########################
+            
             schub = contManager.statePlayer1.Triggers.Right;
             rueckschub = contManager.statePlayer1.Triggers.Left;
             vertical = contManager.statePlayer1.ThumbSticks.Left.Y;
@@ -61,8 +61,7 @@ public class SubControl : MonoBehaviour
                 {
                     Sonar();
                 }
-
-                // ######################  Controller 2 = Ausguck #########################
+                
 
                 if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed )
                 {
@@ -82,8 +81,7 @@ public class SubControl : MonoBehaviour
                 {
                     Sonar();
                 }
-
-                // ######################  Controller 2 = Ausguck #########################
+                
 
                 if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed && torpedoReady)
                 {
@@ -121,8 +119,8 @@ public class SubControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, -maxAngle + 0.5f);
 
 
-        controllerManager.increaseRumble(schub*Time.deltaTime, 0, 0);
-        controllerManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
+        contManager.increaseRumble(schub*Time.deltaTime, 0, 0);
+        contManager.increaseRumble(rueckschub * Time.deltaTime, 0, 0);
 
 
     }
@@ -201,14 +199,17 @@ public class SubControl : MonoBehaviour
             case "Torpedo":
                 yield return new WaitForSeconds(torpedoCooldown);
                 torpedoReady = true;
+                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.TorpedoBereit);
                 break;
             case "Sonar":
                 yield return new WaitForSeconds(sonarCooldown);
                 sonarReady = true;
+                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.SonarBereit);
                 break;
             case "Stoerkoerper":
                 yield return new WaitForSeconds(stoerkoerperCooldown);
                 stoerkoerperReady = true;
+                gameMan.effectScript.Effekt(transform.position, Effects.Effekte.StoerkoerperBereit);
                 break;
             default:
                 Debug.Log("Fehler in SubControl-Cooldown");

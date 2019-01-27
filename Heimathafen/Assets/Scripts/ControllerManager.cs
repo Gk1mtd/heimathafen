@@ -129,8 +129,7 @@ public class ControllerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Find a PlayerIndex, for a single player game
-        // Will find the first controller that is connected ans use it
+
         if (!player1IndexSet || !prevStatePlayer1.IsConnected || !player2IndexSet || !prevStatePlayer2.IsConnected)
         {
             for (int i = 0; i < 4; ++i)
@@ -140,21 +139,19 @@ public class ControllerManager : MonoBehaviour
                 if (testState.IsConnected)
                 {
                     Debug.Log(string.Format("GamePad found {0}", testPlayerIndex));
-
-
                     //inverted order so first player will be set first etc. :) 
                     if (!player2IndexSet || !prevStatePlayer2.IsConnected)
                     {
-                        player1Index = testPlayerIndex;
-                        player1IndexSet = true;
-
+                        Debug.Log(string.Format("GamePad {0}", testPlayerIndex));
+                        player2Index = testPlayerIndex;
+                        player2IndexSet = true;
                     }
 
-                    if (!player1IndexSet || !prevStatePlayer1.IsConnected)
+                    else if (!player1IndexSet || !prevStatePlayer1.IsConnected)
                     {
+                        Debug.Log(string.Format("GamePad {0}", testPlayerIndex));
                         player1Index = testPlayerIndex;
                         player1IndexSet = true;
-
                     }
                     
                 }
