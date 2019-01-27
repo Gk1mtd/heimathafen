@@ -88,6 +88,11 @@ public class GameManager : MonoBehaviour
         {
             ControllerManager.instance.noRumble();
         }
+        //if (Input.anyKeyDown)
+        //if (SceneManager.GetActiveScene().name == "TutorialScene")
+        //{
+        //    YouWon();
+        //}
     }
 
     public void ChangeHealth(float mod)
@@ -110,11 +115,11 @@ public class GameManager : MonoBehaviour
         GetComponent<GameUI>().ChangeSubtitles("You won");
         if (SceneManager.GetActiveScene().name == "TutorialScene")
         {
-            LoadYourAsyncScene("Level1");
+            SceneManager.LoadScene("Level1");
         }
         if (SceneManager.GetActiveScene().name == "Level1")
         {
-            LoadYourAsyncScene("Outro");
+            SceneManager.LoadScene("Outro");
         }
     }
 

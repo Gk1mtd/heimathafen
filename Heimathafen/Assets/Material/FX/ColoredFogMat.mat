@@ -28,6 +28,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _FogAmount: 5.09
+    - _FogAmount: 4.93
     - _FogIntensity: 0.62
     m_Colors: []
