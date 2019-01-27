@@ -12,12 +12,14 @@ public class GameUI : MonoBehaviour
     private Image image2;
     private Color white;
     private Color transparent;
+    private Text messages;
 
     private enum UIobjects
     {
         Subtitle,
         Image1,
-        Image2
+        Image2,
+        Messages
     }
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class GameUI : MonoBehaviour
         image2 = GameObject.Find("SubImg2").GetComponent<Image>();
         image1.gameObject.SetActive(false);
         image2.gameObject.SetActive(false);
+        messages = GameObject.Find("Messages").GetComponent<Text>();
     }
 
     public void ChangeImage1(Sprite img)
@@ -53,6 +56,12 @@ public class GameUI : MonoBehaviour
         StartCoroutine(RemoveSubtitles(UIobjects.Subtitle));
     }
 
+    public void ChangeMessages(string subtext)
+    {
+        messages.text = subtext;
+        messages.gameObject.SetActive(true);
+        StartCoroutine(RemoveSubtitles(UIobjects.Messages));
+    }
 
     IEnumerator RemoveSubtitles(UIobjects obj)
     {
@@ -67,6 +76,9 @@ public class GameUI : MonoBehaviour
                 break;
             case UIobjects.Image2:
                 image2.gameObject.SetActive(false);
+                break;
+            case UIobjects.Messages:
+                messages.gameObject.SetActive(false);
                 break;
             default:
                 Debug.Log("Fehler in UI");
