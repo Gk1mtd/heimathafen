@@ -82,7 +82,7 @@ public class SubControl : MonoBehaviour
                 }
                 
 
-                if (contManager.statePlayer1.Buttons.B == XInputDotNetPure.ButtonState.Pressed && torpedoReady)
+                if (contManager.statePlayer2.Buttons.B == XInputDotNetPure.ButtonState.Pressed && torpedoReady)
                 {
                     Torpedo();
                 }

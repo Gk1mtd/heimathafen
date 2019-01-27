@@ -1433,47 +1433,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8184fc8f3273a48aab60298591edf4d8, type: 3}
---- !u!1 &1993387562 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7420553057949986474, guid: e28f5c82eecd8b244a91fbb2132e51da,
-    type: 3}
-  m_PrefabInstance: {fileID: 7420553059018943186}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1993387563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993387562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cb20f9db1a33bb4498052ba1e7fa450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subtitleDisplayTime: 5
---- !u!114 &1993387564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993387562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12e6b22819ef7b45a1861a340fca87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  rumbleReduce: 0.1
-  maxNaturalRumble: 0.5
-  minNaturalRumble: 0
-  player1Rumble:
-  - 0
-  - 0
-  player2Rumble:
-  - 0
-  - 0
 --- !u!1 &2006974265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,50 +1883,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 255319309, guid: d32954290319e684795ee8d49cb2742f, type: 3}
-      propertyPath: m_Shadows.m_NormalBias
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996536075867924750, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 8996536075867924750, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4790459570442824485, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: control
-      value: 
-      objectReference: {fileID: 6299434327822282680}
-    - target: {fileID: 4790459570442824485, guid: d32954290319e684795ee8d49cb2742f,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 6299434327822282679}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32954290319e684795ee8d49cb2742f, type: 3}
---- !u!54 &6299434327822282679 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 5962285805626414158, guid: d32954290319e684795ee8d49cb2742f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6299434327822282678}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6299434327822282680 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6819197950976342806, guid: d32954290319e684795ee8d49cb2742f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6299434327822282678}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 457127150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27b3a4990dc5e3b4aaa3525f0095ae1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7420553059018943186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2042,28 +1959,8 @@ PrefabInstance:
       objectReference: {fileID: 217346386}
     - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
         type: 3}
-      propertyPath: funkenKollision
+      propertyPath: sonarControl
       value: 
-      objectReference: {fileID: 4078869970743321540, guid: 82e1dc6f65a677f4eba34a9645817e39,
-        type: 3}
-    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
-        type: 3}
-      propertyPath: sonarAudioStart
-      value: 
-      objectReference: {fileID: 8300000, guid: 4f8c7db62dfb4ea4488554a9a7f67611, type: 3}
-    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
-        type: 3}
-      propertyPath: stoerkoerperAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 8025d25e510e6c646bfe89b6e3f32412, type: 3}
-    - target: {fileID: 7420553057949986475, guid: e28f5c82eecd8b244a91fbb2132e51da,
-        type: 3}
-      propertyPath: torpedoLaunch
-      value: 
-      objectReference: {fileID: 8300000, guid: 408b51dc63c55a04dbfe68fbe81fd523, type: 3}
-    - target: {fileID: 302493918, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}
-      propertyPath: debug
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1555243219}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e28f5c82eecd8b244a91fbb2132e51da, type: 3}

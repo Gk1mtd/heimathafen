@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class GameUI : MonoBehaviour
         StartCoroutine(RemoveSubtitles(UIobjects.Subtitle));
     }
 
+
     IEnumerator RemoveSubtitles(UIobjects obj)
     {
         yield return new WaitForSeconds(subtitleDisplayTime);
@@ -70,7 +72,5 @@ public class GameUI : MonoBehaviour
                 Debug.Log("Fehler in UI");
                 break;
         }
-
-
     }
 }
