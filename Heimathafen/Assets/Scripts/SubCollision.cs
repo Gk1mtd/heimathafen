@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if !UNITY_EDITOR_OSX
 
 public class SubCollision : MonoBehaviour
 {
@@ -62,3 +63,4 @@ public class SubCollision : MonoBehaviour
         }
     }
 }
+#endif

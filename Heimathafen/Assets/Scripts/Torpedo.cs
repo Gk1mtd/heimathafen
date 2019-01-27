@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+#if !UNITY_EDITOR_OSX
 public class Torpedo : MonoBehaviour
 {
     public float speed;
@@ -34,3 +34,4 @@ public class Torpedo : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
+#endif

@@ -110,11 +110,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-<<<<<<< HEAD
     generateSecondaryUV: 1
-=======
-    generateSecondaryUV: 0
->>>>>>> e47e7e7c0faafb18b5e8559f0a9fa4358e93806e
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
