@@ -966,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 244326935, guid: 8c82a377aee80e84bbefff4ed7627022, type: 3}
       propertyPath: subtitleText
       value: When the torpedo is very close, Player 2 can use his Countermeasures
-        (A) to avert it.
+        (Y) to avert it.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c82a377aee80e84bbefff4ed7627022, type: 3}
@@ -2188,7 +2188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1381730894
 CanvasRenderer:
   m_ObjectHideFlags: 0

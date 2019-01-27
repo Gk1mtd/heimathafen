@@ -108,7 +108,6 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You won");
-        LoadYourAsyncScene("Level1");
         if (SceneManager.GetActiveScene().name == "TutorialScene")
         {
             LoadYourAsyncScene("Level1");
@@ -125,8 +124,8 @@ public class GameManager : MonoBehaviour
         gameIsRunning = false;
         playerObj.GetComponent<SubControl>().StoppeUBoot();
         GetComponent<GameUI>().ChangeSubtitles("You lost");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Application.Quit();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //Application.Quit();
     }
 
     //Unsichtbares Torpedo starten
